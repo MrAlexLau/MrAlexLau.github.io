@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: brew - Bits on Bits on Bits</title>
+  <title>Autostarting Homebrew Packages - Bits on Bits on Bits</title>
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Category: brew">
+  <meta name="description" content="Homebrew has made my life a lot easier when setting up new mac development environments. To install a new package is as easy as typing brew install &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://alexlau123.github.ioblog/categories/brew">
+  <link rel="canonical" href="http://alexlau123.github.io/blog/2013/10/27/autostarting-homebrew-packages">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Bits on Bits on Bits" type="application/atom+xml">
@@ -64,35 +64,96 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Brew</h1>
+    
+      <h1 class="entry-title">Autostarting Homebrew Packages</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-27T19:48:00-05:00" pubdate data-updated="true">Oct 27<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p><a href="http://brew.sh">Homebrew</a> has made my life a lot easier when setting up new mac development environments. To install a new package is as easy as typing <code>brew install mysql</code> on the command line. (Other programs I commonly install with Homebrew are git, mongodb, and postgresql.)</p>
 
-  
-  <h2>2013</h2>
+<p>Sometimes you want a program to start a daemon (background) process when you log in. For example, I can start mongodb&rsquo;s daemon with the <code>mongod</code> command, but it&rsquo;d be nicer if it just started automatically. Fortunately Homebrew has a way to do this!</p>
 
-<article>
-  
-<h1><a href="/blog/2013/10/27/autostarting-brew-packages/">Autostarting Brew Packages</a></h1>
-<time datetime="2013-10-27T19:48:00-05:00" pubdate><span class='month'>Oct</span> <span class='day'>27</span> <span class='year'>2013</span></time>
+<p>I can type <code>brew info mongo</code>. If mongod isn&rsquo;t set up to run automatically, the last bit of output will look like this:</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/brew/'>brew</a>, <a class='category' href='/blog/categories/mac-osx/'>mac-osx</a>, <a class='category' href='/blog/categories/protip/'>protip</a></span>
-</footer>
+<pre><code>To have launchd start mongodb at login:
+    ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
+Then to load mongodb now:
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+Or, if you don't want/need launchctl, you can just run:
+    mongod
+</code></pre>
 
-
-</article>
-
+<p>Note how you not only see how to start mongodb upon login, but also it shows you the name of mongo&rsquo;s daemon process, mongod.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Alex Lau</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-27T19:48:00-05:00" pubdate data-updated="true">Oct 27<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/homebrew/'>homebrew</a>, <a class='category' href='/blog/categories/mac-osx/'>mac-osx</a>, <a class='category' href='/blog/categories/protip/'>protip</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://alexlau123.github.io/blog/2013/10/27/autostarting-homebrew-packages/" data-via="" data-counturl="http://alexlau123.github.io/blog/2013/10/27/autostarting-homebrew-packages/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>
@@ -104,7 +165,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/10/27/autostarting-brew-packages/">Autostarting Brew Packages</a>
+        <a href="/blog/2013/10/27/autostarting-homebrew-packages/">Autostarting Homebrew Packages</a>
       </li>
     
   </ul>
