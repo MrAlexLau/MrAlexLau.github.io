@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Bits on Bits on Bits]]></title>
-  <link href="http://alexlau123.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: mac-osx | Bits on Bits on Bits]]></title>
+  <link href="http://alexlau123.github.io/blog/categories/mac-osx/atom.xml" rel="self"/>
   <link href="http://alexlau123.github.io/"/>
   <updated>2013-10-27T20:18:02-05:00</updated>
   <id>http://alexlau123.github.io/</id>
