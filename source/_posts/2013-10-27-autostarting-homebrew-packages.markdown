@@ -8,9 +8,9 @@ categories: homebrew protip mac-osx
 ---
 [Homebrew](http://brew.sh) has made my life a lot easier when setting up new mac development environments. To install a new package is as easy as typing `brew install mysql` on the command line. (Other programs I commonly install with Homebrew are git, mongodb, and postgresql.)
 
-Sometimes you want a program to start a daemon (background) process when you log in. For example, I can start mongodb's daemon with the `mongod` command, but it'd be nicer if it just started automatically. Fortunately Homebrew has a way to do this! 
+Sometimes you want a program to start a daemon (background) process when you log in. For example, I can start mongodb's daemon with the `mongod` command, but it'd be nicer if it just started automatically. 
 
-I can type `brew info mongo`. If mongod isn't set up to run automatically, the last bit of output will look like this:
+Fortunately Homebrew has a way to do this! Simply type `brew info mongo`. If mongod isn't set up to run automatically, the last bit of output will look like this:
     To have launchd start mongodb at login:
         ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
     Then to load mongodb now:
