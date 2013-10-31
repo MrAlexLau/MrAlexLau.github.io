@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://alexlau123.github.io/sitemap.xml 
+Sitemap: http://bitsonbitsonbits.com/sitemap.xml 
