@@ -4,7 +4,7 @@
 
 url: http://bitsonbitsonbits.com
 title: Bits on Bits on Bits
-subtitle: Rails. Programming. Life.
+subtitle: Programming. Life.
 author: Alex Lau 
 simple_search: http://google.com/search
 description:
@@ -94,7 +94,7 @@ disqus_short_name: bitsonbitsonbits
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-45346656-1
 
 # Facebook Like
 facebook_like: false
