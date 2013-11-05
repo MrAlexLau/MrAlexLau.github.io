@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Bits on Bits on Bits]]></title>
-  <link href="http://bitsonbitsonbits.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: git | Bits on Bits on Bits]]></title>
+  <link href="http://bitsonbitsonbits.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://bitsonbitsonbits.com/"/>
   <updated>2013-11-04T22:34:11-06:00</updated>
   <id>http://bitsonbitsonbits.com/</id>
@@ -43,29 +43,6 @@
 <p><em>&ldquo;I don&rsquo;t really get what the big deal is with git. I mean it&rsquo;s pretty much the same as &ndash; oh wait, oh wait no it&rsquo;s not. Ok. Yes. This is really cool. LET FREEDOM RING.&rdquo;</em></p>
 
 <p>Just when I was telling my friends how great svn is, git comes along and changed everthing. Changes are stored extremely efficiently, making the act of pulling changes quick even when there are a lot of files. Branches with git are &ldquo;cheap&rdquo; in that they are easily mergeable with other branches. With git, life is good. With github, life is great. I&rsquo;ll go into that more in another post.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Autostarting Homebrew Packages]]></title>
-    <link href="http://bitsonbitsonbits.com/blog/2013/10/27/autostarting-homebrew-packages/"/>
-    <updated>2013-10-27T19:48:00-05:00</updated>
-    <id>http://bitsonbitsonbits.com/blog/2013/10/27/autostarting-homebrew-packages</id>
-    <content type="html"><![CDATA[<p><a href="http://brew.sh">Homebrew</a> has made my life a lot easier when setting up new mac development environments. To install a new package is as easy as typing <code>brew install mysql</code> on the command line. (Other programs I commonly install with Homebrew are git, mongodb, and postgresql.)</p>
-
-<p>Sometimes you want a program to start a daemon (background) process when you log in. For example, I can start mongodb&rsquo;s daemon with the <code>mongod</code> command, but it&rsquo;d be nicer if it just started automatically.</p>
-
-<p>Fortunately Homebrew has a way to do this! Simply type <code>brew info mongo</code>. If mongod isn&rsquo;t set up to run automatically, the last bit of output will look like this:</p>
-
-<pre><code>To have launchd start mongodb at login:
-    ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
-Then to load mongodb now:
-    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
-Or, if you don't want/need launchctl, you can just run:
-    mongod
-</code></pre>
-
-<p>Note how you not only see how to start mongodb upon login, but also it shows you the name of mongo&rsquo;s daemon process, mongod.</p>
 ]]></content>
   </entry>
   

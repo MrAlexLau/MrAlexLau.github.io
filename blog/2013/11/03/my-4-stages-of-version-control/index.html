@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Autostarting Homebrew Packages - Bits on Bits on Bits</title>
+  <title>My 4 Stages of Version Control - Bits on Bits on Bits</title>
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Homebrew has made my life a lot easier when setting up new mac development environments. To install a new package is as easy as typing brew install &hellip;">
+  <meta name="description" content="Version control &ndash; it&rsquo;s great. It&rsquo;s also amazing how you don&rsquo;t realize how much better it can be until you use a better tool. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://bitsonbitsonbits.com/blog/2013/10/27/autostarting-homebrew-packages">
+  <link rel="canonical" href="http://bitsonbitsonbits.com/blog/2013/11/03/my-4-stages-of-version-control">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Bits on Bits on Bits" type="application/atom+xml">
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Autostarting Homebrew Packages</h1>
+      <h1 class="entry-title">My 4 Stages of Version Control</h1>
     
     
       <p class="meta">
@@ -96,28 +96,38 @@
   
 
 
-<time datetime="2013-10-27T19:48:00-05:00" pubdate data-updated="true">Oct 27<span>th</span>, 2013</time>
+<time datetime="2013-11-03T00:00:00-05:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="http://brew.sh">Homebrew</a> has made my life a lot easier when setting up new mac development environments. To install a new package is as easy as typing <code>brew install mysql</code> on the command line. (Other programs I commonly install with Homebrew are git, mongodb, and postgresql.)</p>
+<div class="entry-content"><p>Version control &ndash; it&rsquo;s great. It&rsquo;s also amazing how you don&rsquo;t realize how much better it <em>can</em> be until you use a better tool. Personally, I like to think I&rsquo;ve gone through 4 main &ldquo;stages&rdquo; of version control, each stage being a more useful and effective addition to my workflow than the previous.</p>
 
-<p>Sometimes you want a program to start a daemon (background) process when you log in. For example, I can start mongodb&rsquo;s daemon with the <code>mongod</code> command, but it&rsquo;d be nicer if it just started automatically.</p>
+<h2>Stage 1 &ndash; Local Backups</h2>
 
-<p>Fortunately Homebrew has a way to do this! Simply type <code>brew info mongo</code>. If mongod isn&rsquo;t set up to run automatically, the last bit of output will look like this:</p>
+<p><em>&ldquo;Hmmmm, I&rsquo;m planning on making a lot of change to this code, better make a copy of the file <strong>hello.cpp</strong>. I&rsquo;ll call it <strong>hello2.cpp</strong>! I&rsquo;m a genius!&rdquo;</em></p>
 
-<pre><code>To have launchd start mongodb at login:
-    ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
-Then to load mongodb now:
-    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
-Or, if you don't want/need launchctl, you can just run:
-    mongod
-</code></pre>
+<p>Stage 1 is every n00b&rsquo;s favorite, just making another copy of the file. Something go horribly wrong while you were in that 4am coding frenzy? You&rsquo;ve always got that copy lying around, assuming you had the foresight to make it.</p>
 
-<p>Note how you not only see how to start mongodb upon login, but also it shows you the name of mongo&rsquo;s daemon process, mongod.</p>
+<h2>Stage 2 &ndash; Offsite Backups</h2>
+
+<p><em>&ldquo;Hey (insert programming partner&rsquo;s name here), we&rsquo;re going to need to share our code somehow! How about I work on it Friday night, then email you a zip file of my progress? Then you can work on it Saturday!&rdquo;</em></p>
+
+<p>Stage 2 is only slightly better than stage 1. As least you (and your partner) have a copy of the code the next time you spill some hot chocolate on your laptop.</p>
+
+<h2>Stage 3 &ndash; Centralized Version Control</h2>
+
+<p><em>&ldquo;Wow, svn is really cool! You can make savepoints in your code?! Other people can get your code too, and contribute to it?!&rdquo;</em></p>
+
+<p>Using an <strong>actual</strong> version control system for the first time is mindblowing in the omg-why-didn&rsquo;t-I-know-about-this-before kind of way. Once you realize how to commit and branch code, there&rsquo;s no turning back.</p>
+
+<h2>Stage 4 &ndash; Distributed Version Control</h2>
+
+<p><em>&ldquo;I don&rsquo;t really get what the big deal is with git. I mean it&rsquo;s pretty much the same as &ndash; oh wait, oh wait no it&rsquo;s not. Ok. Yes. This is really cool. LET FREEDOM RING.&rdquo;</em></p>
+
+<p>Just when I was telling my friends how great svn is, git comes along and changed everthing. Changes are stored extremely efficiently, making the act of pulling changes quick even when there are a lot of files. Branches with git are &ldquo;cheap&rdquo; in that they are easily mergeable with other branches. With git, life is good. With github, life is great. I&rsquo;ll go into that more in another post.</p>
 </div>
 
 
@@ -140,12 +150,12 @@ Or, if you don't want/need launchctl, you can just run:
   
 
 
-<time datetime="2013-10-27T19:48:00-05:00" pubdate data-updated="true">Oct 27<span>th</span>, 2013</time>
+<time datetime="2013-11-03T00:00:00-05:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/homebrew/'>homebrew</a>, <a class='category' href='/blog/categories/mac-osx/'>mac-osx</a>, <a class='category' href='/blog/categories/protip/'>protip</a>
+    <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/version-control/'>version-control</a>
   
 </span>
 
@@ -154,7 +164,7 @@ Or, if you don't want/need launchctl, you can just run:
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://bitsonbitsonbits.com/blog/2013/10/27/autostarting-homebrew-packages/" data-via="" data-counturl="http://bitsonbitsonbits.com/blog/2013/10/27/autostarting-homebrew-packages/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://bitsonbitsonbits.com/blog/2013/11/03/my-4-stages-of-version-control/" data-via="" data-counturl="http://bitsonbitsonbits.com/blog/2013/11/03/my-4-stages-of-version-control/" >Tweet</a>
   
   
   
@@ -163,8 +173,8 @@ Or, if you don't want/need launchctl, you can just run:
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/10/27/autostarting-homebrew-packages/" title="Previous Post: Autostarting Homebrew Packages">&laquo; Autostarting Homebrew Packages</a>
       
-        <a class="basic-alignment right" href="/blog/2013/11/03/my-4-stages-of-version-control/" title="Next Post: My 4 Stages of Version Control">My 4 Stages of Version Control &raquo;</a>
       
     </p>
   </footer>
@@ -218,8 +228,8 @@ Or, if you don't want/need launchctl, you can just run:
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://bitsonbitsonbits.com/blog/2013/10/27/autostarting-homebrew-packages/';
-        var disqus_url = 'http://bitsonbitsonbits.com/blog/2013/10/27/autostarting-homebrew-packages/';
+        var disqus_identifier = 'http://bitsonbitsonbits.com/blog/2013/11/03/my-4-stages-of-version-control/';
+        var disqus_url = 'http://bitsonbitsonbits.com/blog/2013/11/03/my-4-stages-of-version-control/';
         var disqus_script = 'embed.js';
       
     (function () {
