@@ -4,7 +4,7 @@
   <title><![CDATA[Bits on Bits on Bits]]></title>
   <link href="http://bitsonbitsonbits.com/atom.xml" rel="self"/>
   <link href="http://bitsonbitsonbits.com/"/>
-  <updated>2013-11-04T22:35:56-06:00</updated>
+  <updated>2013-11-04T22:37:28-06:00</updated>
   <id>http://bitsonbitsonbits.com/</id>
   <author>
     <name><![CDATA[Alex Lau]]></name>
@@ -42,7 +42,7 @@
 
 <p><em>&ldquo;I don&rsquo;t really get what the big deal is with git. I mean it&rsquo;s pretty much the same as &ndash; oh wait, oh wait no it&rsquo;s not. Ok. Yes. This is really cool. LET FREEDOM RING.&rdquo;</em></p>
 
-<p>Just when I was telling my friends how great svn is, git comes along and changed everthing. Changes are stored extremely efficiently, making the act of pulling changes quick even when there are a lot of files. Branches with git are &ldquo;cheap&rdquo; in that they are easily mergeable with other branches. With git, life is good. With github, life is great. I&rsquo;ll go into that more in another post.</p>
+<p>Just when I was telling my friends how great svn is, git came along and changed everthing. Changes are stored extremely efficiently, making the act of pulling changes quick even when there are a lot of files modified. Branches with git are &ldquo;cheap&rdquo; in that they are easily mergeable with other branches. With git, life is good. With github, life is great. I&rsquo;ll go into that more in another post.</p>
 ]]></content>
   </entry>
   
