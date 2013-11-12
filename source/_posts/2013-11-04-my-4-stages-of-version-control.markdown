@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My 4 Stages of Version Control"
-date: 2013-11-03
+date: 2013-11-04
 comments: true
 categories: [git, version-control]
 ---
@@ -29,7 +29,7 @@ Stage 4 - Distributed Version Control
 -------------------------------------
 *"I don't really get what the big deal is with git. I mean it's pretty much the same as - oh wait, oh wait no it's not. Ok. Yes. This is really cool. LET FREEDOM RING."*
 
-Just when I was telling my friends how great svn is, git comes along and changed everthing. Changes are stored extremely efficiently, making the act of pulling changes quick even when there are a lot of files. Branches with git are "cheap" in that they are easily mergeable with other branches. With git, life is good. With github, life is great. I'll go into that more in another post.
+Just when I was telling my friends how great svn is, git came along and changed everthing. Changes are stored extremely efficiently, making the act of pulling changes quick even when there are a lot of files modified. Branches with git are "cheap" in that they are easily mergeable with other branches. With git, life is good. With github, life is great. I'll go into that more in another post.
 
 
 
