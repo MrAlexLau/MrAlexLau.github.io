@@ -7,6 +7,10 @@ sharing: true
 footer: true
 ---
 
+## Git
+* [Markdown Syntax](http://daringfireball.net/projects/markdown/syntax) - markdown syntax (useful for git comments) 
+
+
 ## Javascript
 * [MicroJS](http://microjs.com/#) - a site for searching for javascript micro-frameworks
 
@@ -26,5 +30,6 @@ footer: true
 
 ## Vim
 * [CtrlP](https://github.com/kien/ctrlp.vim) - fuzzy file search 
+* [Janus](https://github.com/carlhuda/janus) - a distribution of plugins for VIM (including both CtrlP and NERDTree)
 * [NERDTree](https://github.com/scrooloose/nerdtree) - file explorer
 * [Pathogen](https://github.com/tpope/vim-pathogen) - plugin installer 

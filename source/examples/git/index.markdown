@@ -7,6 +7,17 @@ sharing: false
 footer: true
 ---
 
+### Checkout an earlier version of a branch
+```
+git co master@{one.month.ago} 
+```
+
+### Create a new branch 
+**(while specifying your current branch as upstream)**
+```
+git co -b my_new_branch_name
+```
+
 ### Deleting a branch
 ``` 
 git branch -d the_local_branch
