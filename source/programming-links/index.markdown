@@ -8,6 +8,7 @@ footer: true
 ---
 
 ## Git
+* [How Rebasing Works](http://lostechies.com/joshuaflanagan/2010/09/03/use-gitk-to-understand-git/) - great explanation of how rebasing works in Git
 * [Markdown Syntax](http://daringfireball.net/projects/markdown/syntax) - markdown syntax (useful for git comments) 
 
 
@@ -15,12 +16,14 @@ footer: true
 * [MicroJS](http://microjs.com/#) - a site for searching for javascript micro-frameworks
 
 ## Ruby
-* `retry` [documentation](http://stackoverflow.com/questions/12878888/workaround-for-twitter-api-rate-limiting/12878937#12878937)
+* [Retry](http://stackoverflow.com/questions/12878888/workaround-for-twitter-api-rate-limiting/12878937#12878937)
+* [Tap](http://www.seejohncode.com/2012/01/02/ruby-tap-that/)
 
 ## Ruby on Rails
 #### Testing
 * [Better Errors](https://github.com/charliesome/better_errors) - an amazing gem that lets you run a REPL from the rails error page
 * [Braise](https://github.com/MrAlexLau/braise) - my gem that lets you raise errors in less keystrokes with colored output
+* [Rails Composer](http://railsapps.github.io/rails-composer/) - gives you a wizard when setting up a rails project. Never start a new project without it!
 
 ## Command Line
 * [Explain Shell](http://explainshell.com/) - website that lets you enter a shell command and provides an explanation of what each command does
