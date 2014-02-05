@@ -118,6 +118,12 @@ git co master@{one.month.ago} Create a new branch (while specifying your current
 </pre></td><td class='code'><pre><code class=''><span class='line'>git branch -d the_local_branch</span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Rebasing a branch</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git rebase -i HEAD~2 </span></code></pre></td></tr></table></div></figure>
+
+
 <h3>Pruning local branches</h3>
 
 <p>After fetching, remove any remote-tracking branches which no longer exist on the remote.</p>
@@ -126,10 +132,17 @@ git co master@{one.month.ago} Create a new branch (while specifying your current
 </pre></td><td class='code'><pre><code class=''><span class='line'>git fetch -p </span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Undoing the latest local commit</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git reset --soft 'HEAD^1'</span></code></pre></td></tr></table></div></figure>
+
+
 <p>References:</p>
 
 <ul>
 <li><a href="http://makandracards.com/makandra/621-git-delete-a-branch-local-or-remote">Deleting/pruning git branches</a></li>
+<li>[Undoing a commit](<a href="http://stackoverflow.com/questions/927358/how-to-undo-the-last-git-commit">http://stackoverflow.com/questions/927358/how-to-undo-the-last-git-commit</a></li>
 </ul>
 
 

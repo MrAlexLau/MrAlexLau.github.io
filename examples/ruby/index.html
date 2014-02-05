@@ -9,7 +9,7 @@
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Ruby Jan 12th, 2014 Tap method from See John Code 1
+  <meta name="description" content="Ruby Jan 12th, 2014 Loops 1
 2
 3
 4
@@ -21,9 +21,21 @@
 10
 11
 12
-# TRADITIONAL
-object = SomeClass.new
-object.key = &#39;value&#39; &hellip;">
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+# these loops all execute 5 times # while loop i = 1 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -111,7 +123,64 @@ object.key = &#39;value&#39; &hellip;">
 <time datetime="2014-01-12T22:37:00-06:00" pubdate data-updated="true">Jan 12<span>th</span>, 2014</time></p>
   </header>
   
-  <h3>Tap method</h3>
+  <h3>Loops</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># these loops all execute 5 times</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># while loop </span>
+</span><span class='line'><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s1">&#39;this is a while loop&#39;</span>
+</span><span class='line'>  <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># do while loop (begin/end/while in ruby)</span>
+</span><span class='line'><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'><span class="k">begin</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s1">&#39;this is a do while loop&#39;</span>
+</span><span class='line'>  <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'><span class="k">end</span> <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># for loop</span>
+</span><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s1">&#39;this is a for loop&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># looping with a times block</span>
+</span><span class='line'><span class="mi">5</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s1">&#39;this is a times block&#39;</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Tap method</h3>
 
 <p>from <a href="http://www.seejohncode.com/2012/01/02/ruby-tap-that/">See John Code</a></p>
 
