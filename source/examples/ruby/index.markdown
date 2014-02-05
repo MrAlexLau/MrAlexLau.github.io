@@ -7,6 +7,14 @@ sharing: false
 footer: true
 ---
 
+### Inject
+see its [documentation](http://ruby-doc.org/core-2.1.0/Enumerable.html#method-i-inject)
+``` ruby
+(1..3).inject(100) { |sum, n| sum + n }
+
+#=> 106, this is the same as 100 + (1 + 2 + 3)
+```
+
 ### Loops
 ``` ruby
 # these loops all execute 5 times
