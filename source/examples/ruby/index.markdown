@@ -2,25 +2,55 @@
 layout: page
 title: "ruby"
 date: 2014-01-12 22:37
-comments: false 
-sharing: false 
+comments: false
+sharing: false
 footer: true
 ---
 
-### Tap method 
+### Loops
+``` ruby
+# these loops all execute 5 times
+
+# while loop
+i = 1
+while i <= 5
+  puts 'this is a while loop'
+  i += 1
+end
+
+# do while loop (begin/end/while in ruby)
+i = 1
+begin
+  puts 'this is a do while loop'
+  i += 1
+end while i <= 5
+
+# for loop
+for i in 1..5
+  puts 'this is a for loop'
+end
+
+# looping with a times block
+5.times do
+  puts 'this is a times block'
+end
+
+```
+
+### Tap method
 from [See John Code](http://www.seejohncode.com/2012/01/02/ruby-tap-that/)
 ``` ruby
 # TRADITIONAL
 object = SomeClass.new
 object.key = 'value'
 object
- 
+
 # TAPPED
 object = SomeClass.new.tap do |obj|
   obj.key = 'value'
 end
- 
+
 # CONDENSED
 obj = SomeClass.new.tap { |obj| obj.key = 'value' }
-``` 
+```
 
