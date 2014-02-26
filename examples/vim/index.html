@@ -9,7 +9,9 @@
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Vim Jan 12th, 2014 vimrc file &ldquo; comments lead off with a double quote Jan 12th, 2014 Recent Posts My 4 Stages of Version Control Autostarting &hellip;">
+  <meta name="description" content="Vim Jan 12th, 2014 Find and Replace Find and replace globally in a file: 1
+:s/foo/bar/g Find and replace between lines 8 and 10: 1
+:8,10 s/foo/bar/g &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -97,9 +99,32 @@
 <time datetime="2014-01-12T17:56:00-06:00" pubdate data-updated="true">Jan 12<span>th</span>, 2014</time></p>
   </header>
   
-  <h3>vimrc file</h3>
+  <h3>Find and Replace</h3>
 
-<p>&ldquo; comments lead off with a double quote</p>
+<p>Find and replace globally in a file:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:s/foo/bar/g</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Find and replace between lines 8 and 10:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:8,10 s/foo/bar/g</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+Add c to the end of the command to be prompted for a confirmation at each find/replace:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:8,10 s/foo/bar/gc</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h3>Vimrc settings file</h3>
+
+<p><code>" comments lead off with a double quote</code></p>
 
   
     <footer>
