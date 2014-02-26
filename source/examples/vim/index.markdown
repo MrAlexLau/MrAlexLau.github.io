@@ -15,5 +15,5 @@ Find and replace between lines 8 and 10:
 Add c to the end of the command to be prompted for a confirmation at each find/replace: 
 `:8,10 s/foo/bar/gc` 
 
-### vimrc file
+### Vimrc settings file
 " comments lead off with a double quote
