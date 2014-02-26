@@ -36,3 +36,4 @@ footer: true
 * [Janus](https://github.com/carlhuda/janus) - a distribution of plugins for VIM (including both CtrlP and NERDTree)
 * [NERDTree](https://github.com/scrooloose/nerdtree) - file explorer
 * [Pathogen](https://github.com/tpope/vim-pathogen) - plugin installer 
+* [Tips for Vim Splits](http://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally)
