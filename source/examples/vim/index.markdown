@@ -9,11 +9,17 @@ footer: true
 
 ### Find and Replace 
 Find and replace globally in a file:
-`:s/foo/bar/g` 
+```
+:s/foo/bar/g
+```
 Find and replace between lines 8 and 10:
-`:8,10 s/foo/bar/g` 
+```
+:8,10 s/foo/bar/g
+``` 
 Add c to the end of the command to be prompted for a confirmation at each find/replace: 
-`:8,10 s/foo/bar/gc` 
+```
+:8,10 s/foo/bar/gc
+``` 
 
 ### Vimrc settings file
-" comments lead off with a double quote
+`" comments lead off with a double quote`
