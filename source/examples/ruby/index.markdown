@@ -7,6 +7,22 @@ sharing: false
 footer: true
 ---
 
+### Array.select method
+see its [documentation](http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-select)
+``` ruby
+[1,2,3,4,5].select { |num|  num.even?  }   #=> [2, 4]
+[1,2,3,4,5].select { |num|  num > 10  }   #=> []
+```
+
+### Hash.select method
+see its [documentation](http://www.ruby-doc.org/core-2.1.0/Hash.html#method-i-select)
+``` ruby
+h = { "a" => 100, "b" => 200, "c" => 300 }
+h.select {|k,v| k > "a"}  #=> {"b" => 200, "c" => 300}
+h.select {|k,v| v < 200}  #=> {"a" => 100}
+h.select {|k,v| v > 400}  #=> {}
+```
+
 ### Inject
 see its [documentation](http://ruby-doc.org/core-2.1.0/Enumerable.html#method-i-inject)
 ``` ruby
