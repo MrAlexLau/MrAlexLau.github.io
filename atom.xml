@@ -4,7 +4,7 @@
   <title><![CDATA[Bits on Bits on Bits]]></title>
   <link href="http://bitsonbitsonbits.com/atom.xml" rel="self"/>
   <link href="http://bitsonbitsonbits.com/"/>
-  <updated>2014-03-18T20:33:25-05:00</updated>
+  <updated>2014-03-18T20:36:13-05:00</updated>
   <id>http://bitsonbitsonbits.com/</id>
   <author>
     <name><![CDATA[Alex Lau]]></name>
@@ -18,7 +18,7 @@
     <link href="http://bitsonbitsonbits.com/blog/2014/03/18/rubygems-versioning/"/>
     <updated>2014-03-18T20:17:00-05:00</updated>
     <id>http://bitsonbitsonbits.com/blog/2014/03/18/rubygems-versioning</id>
-    <content type="html"><![CDATA[<p>From the RubyGems guide:</p>
+    <content type="html"><![CDATA[<p>From the <a href="http://guides.rubygems.org/patterns/#semantic_versioning">RubyGems guide</a>:</p>
 
 <blockquote><p><strong>PATCH</strong> 0.0.x level changes for implementation level detail changes, such as small bug fixes</p>
 
