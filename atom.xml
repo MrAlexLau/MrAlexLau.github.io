@@ -4,7 +4,7 @@
   <title><![CDATA[Bits on Bits on Bits]]></title>
   <link href="http://bitsonbitsonbits.com/atom.xml" rel="self"/>
   <link href="http://bitsonbitsonbits.com/"/>
-  <updated>2014-03-18T20:36:13-05:00</updated>
+  <updated>2014-03-18T20:49:01-05:00</updated>
   <id>http://bitsonbitsonbits.com/</id>
   <author>
     <name><![CDATA[Alex Lau]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Gmail Snooze]]></title>
+    <link href="http://bitsonbitsonbits.com/blog/2014/03/18/gmail-snooze/"/>
+    <updated>2014-03-18T20:47:00-05:00</updated>
+    <id>http://bitsonbitsonbits.com/blog/2014/03/18/gmail-snooze</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m a huge fan of the app <a href="http://www.mailboxapp.com/">Mailbox</a> for IOS. In my opinion, its killer feature is the ability to &lsquo;snooze&rsquo; emails, so that they are hidden for the time being, but reappear when they are relevant again.</p>
+
+<p>I wanted to have the same functionality through the Gmail web interface, and while googling I stumbled upon a Gmail <a href="http://gmailblog.blogspot.com/2011/07/gmail-snooze-with-apps-script.html">blog post that explains just how to do that</a>. It turns out that this has actually been available for quite some time (since 2011).</p>
+
+<p>What surprised me even more is that you can write custom javascript scripts to process your email, and that these scripts can be executed on a recurring basis.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[RubyGems Versioning]]></title>
