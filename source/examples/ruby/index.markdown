@@ -61,6 +61,14 @@ end
 
 ```
 
+### Rspec
+Expectations on arguments:
+``` ruby
+  expect(obj).to receive(:new).with do |arg1, arg2|
+    expect(arg1).to eq(1)
+  end
+```
+
 ### Tap method
 from [See John Code](http://www.seejohncode.com/2012/01/02/ruby-tap-that/)
 ``` ruby
@@ -77,4 +85,3 @@ end
 # CONDENSED
 obj = SomeClass.new.tap { |obj| obj.key = 'value' }
 ```
-

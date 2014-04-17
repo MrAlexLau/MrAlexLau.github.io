@@ -1,15 +1,18 @@
 ---
 layout: page
 title: "Programming Links"
-date: 2013-12-04 
+date: 2013-12-04
 comments: false
 sharing: true
 footer: true
 ---
 
+## CSS
+* [The Nth Selector](http://nthmaster.com/)
+
 ## Git
 * [How Rebasing Works](http://lostechies.com/joshuaflanagan/2010/09/03/use-gitk-to-understand-git/) - great explanation of how rebasing works in Git
-* [Markdown Syntax](http://daringfireball.net/projects/markdown/syntax) - markdown syntax (useful for git comments) 
+* [Markdown Syntax](http://daringfireball.net/projects/markdown/syntax) - markdown syntax (useful for git comments)
 
 
 ## Javascript
@@ -32,8 +35,8 @@ footer: true
 * [Rubular](http://rubular.com/) - website for testing regular expressions
 
 ## Vim
-* [CtrlP](https://github.com/kien/ctrlp.vim) - fuzzy file search 
+* [CtrlP](https://github.com/kien/ctrlp.vim) - fuzzy file search
 * [Janus](https://github.com/carlhuda/janus) - a distribution of plugins for VIM (including both CtrlP and NERDTree)
 * [NERDTree](https://github.com/scrooloose/nerdtree) - file explorer
-* [Pathogen](https://github.com/tpope/vim-pathogen) - plugin installer 
+* [Pathogen](https://github.com/tpope/vim-pathogen) - plugin installer
 * [Tips for Vim Splits](http://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally)
