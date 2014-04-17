@@ -194,6 +194,19 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Rspec</h3>
+
+<p>Expectations on arguments:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="n">expect</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span><span class="o">.</span><span class="n">with</span> <span class="k">do</span> <span class="o">|</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">arg1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h3>Tap method</h3>
 
 <p>from <a href="http://www.seejohncode.com/2012/01/02/ruby-tap-that/">See John Code</a></p>
@@ -223,8 +236,6 @@
 </span><span class='line'><span class="c1"># CONDENSED</span>
 </span><span class='line'><span class="n">obj</span> <span class="o">=</span> <span class="no">SomeClass</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">tap</span> <span class="p">{</span> <span class="o">|</span><span class="n">obj</span><span class="o">|</span> <span class="n">obj</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span> <span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
-
-
 
 
   
