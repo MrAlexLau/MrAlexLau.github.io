@@ -7,15 +7,22 @@ sharing: false
 footer: true
 ---
 
+### Using !!
+Use !! to coerce nil into false:
+``` ruby
+false || nil => nil
+!!(false || nil) => false
+```
+
 ### Array.select method
-see its [documentation](http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-select)
+See its [documentation](http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-select)
 ``` ruby
 [1,2,3,4,5].select { |num|  num.even?  }   #=> [2, 4]
 [1,2,3,4,5].select { |num|  num > 10  }   #=> []
 ```
 
 ### Hash.select method
-see its [documentation](http://www.ruby-doc.org/core-2.1.0/Hash.html#method-i-select)
+See its [documentation](http://www.ruby-doc.org/core-2.1.0/Hash.html#method-i-select)
 ``` ruby
 h = { "a" => 100, "b" => 200, "c" => 300 }
 h.select {|k,v| k > "a"}  #=> {"b" => 200, "c" => 300}
@@ -24,7 +31,7 @@ h.select {|k,v| v > 400}  #=> {}
 ```
 
 ### Inject
-see its [documentation](http://ruby-doc.org/core-2.1.0/Enumerable.html#method-i-inject)
+See its [documentation](http://ruby-doc.org/core-2.1.0/Enumerable.html#method-i-inject)
 ``` ruby
 (1..3).inject(100) { |sum, n| sum + n }
 
@@ -70,7 +77,7 @@ Expectations on arguments:
 ```
 
 ### Tap method
-from [See John Code](http://www.seejohncode.com/2012/01/02/ruby-tap-that/)
+From [See John Code](http://www.seejohncode.com/2012/01/02/ruby-tap-that/)
 ``` ruby
 # TRADITIONAL
 object = SomeClass.new

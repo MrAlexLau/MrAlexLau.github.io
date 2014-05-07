@@ -26,6 +26,7 @@ footer: true
 #### Testing
 * [Better Errors](https://github.com/charliesome/better_errors) - an amazing gem that lets you run a REPL from the rails error page
 * [Braise](https://github.com/MrAlexLau/braise) - my gem that lets you raise errors in less keystrokes with colored output
+* [Finding HTML Fragments](http://robots.thoughtbot.com/use-capybara-on-any-html-fragment-or-page) - Match HTML fragments in rspec
 * [Rails Composer](http://railsapps.github.io/rails-composer/) - gives you a wizard when setting up a rails project. Never start a new project without it!
 
 ## Command Line
@@ -33,6 +34,10 @@ footer: true
 
 ## Regular Expressions
 * [Rubular](http://rubular.com/) - website for testing regular expressions
+
+## Tmux
+* [Cheat Sheet](https://gist.github.com/MohamedAlaa/2961058) - Cheat sheet for tmux shortcuts
+* [Overview](http://www.danielmiessler.com/study/tmux/) - Tmux overview and shortcuts
 
 ## Vim
 * [CtrlP](https://github.com/kien/ctrlp.vim) - fuzzy file search
