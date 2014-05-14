@@ -23,6 +23,13 @@ git co -b my_new_branch_name
 git branch -d the_local_branch
 ```
 
+### Global Gitignore
+From the [Github documentation](https://help.github.com/articles/ignoring-files#create-a-global-gitignore):
+```
+git config --global core.excludesfile ~/.gitignore_global
+```
+There's also a good [sample global gitignore file](https://gist.github.com/octocat/9257657).
+
 ### Rebasing a branch
 ```
 git rebase -i HEAD~2

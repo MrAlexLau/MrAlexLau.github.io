@@ -7,10 +7,14 @@ sharing: true
 footer: true
 ---
 
+## Chrome
+* [Hotkeys for Devtools](http://anti-code.com/devtools-cheatsheet/)
+
 ## CSS
 * [The Nth Selector](http://nthmaster.com/)
 
 ## Git
+* [Global Gitignore](https://help.github.com/articles/ignoring-files#create-a-global-gitignore) - creating a global gitignore file
 * [How Rebasing Works](http://lostechies.com/joshuaflanagan/2010/09/03/use-gitk-to-understand-git/) - great explanation of how rebasing works in Git
 * [Markdown Syntax](http://daringfireball.net/projects/markdown/syntax) - markdown syntax (useful for git comments)
 
@@ -38,6 +42,7 @@ footer: true
 ## Tmux
 * [Cheat Sheet](https://gist.github.com/MohamedAlaa/2961058) - Cheat sheet for tmux shortcuts
 * [Overview](http://www.danielmiessler.com/study/tmux/) - Tmux overview and shortcuts
+* [(Another) Overview](http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/) - Another tmux overview and shortcuts
 
 ## Vim
 * [CtrlP](https://github.com/kien/ctrlp.vim) - fuzzy file search
