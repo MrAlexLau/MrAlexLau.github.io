@@ -118,6 +118,16 @@ git co master@{one.month.ago} Create a new branch (while specifying your current
 </pre></td><td class='code'><pre><code class=''><span class='line'>git branch -d the_local_branch</span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Global Gitignore</h3>
+
+<p>From the <a href="https://help.github.com/articles/ignoring-files#create-a-global-gitignore">Github documentation</a>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git config --global core.excludesfile ~/.gitignore_global</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There&rsquo;s also a good <a href="https://gist.github.com/octocat/9257657">sample global gitignore file</a>.</p>
+
 <h3>Rebasing a branch</h3>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
