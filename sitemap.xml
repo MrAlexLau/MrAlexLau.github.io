@@ -1,24 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://bitsonbitsonbits.com/blog/2013/10/27/autostarting-homebrew-packages/</loc>
+        <loc>http://bitsonbitsonbits.com/blog/autostarting-homebrew-packages/</loc>
         <lastmod>2014-03-18T20:14:43-05:00</lastmod>
     </url>
     <url>
-        <loc>http://bitsonbitsonbits.com/blog/2013/11/04/my-4-stages-of-version-control/</loc>
+        <loc>http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control/</loc>
         <lastmod>2014-03-18T20:14:43-05:00</lastmod>
     </url>
     <url>
-        <loc>http://bitsonbitsonbits.com/blog/2014/03/18/rubygems-versioning/</loc>
-        <lastmod>2014-03-18T20:36:13-05:00</lastmod>
+        <loc>http://bitsonbitsonbits.com/blog/gmail-snooze/</loc>
+        <lastmod>2014-05-20T21:11:54-05:00</lastmod>
     </url>
     <url>
-        <loc>http://bitsonbitsonbits.com/blog/2014/03/18/gmail-snooze/</loc>
-        <lastmod>2014-03-18T20:47:55-05:00</lastmod>
+        <loc>http://bitsonbitsonbits.com/blog/rubygems-versioning/</loc>
+        <lastmod>2014-05-20T21:49:03-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/blog/archives/</loc>
-        <lastmod>2014-03-18T20:47:55-05:00</lastmod>
+        <lastmod>2014-05-20T21:49:03-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/examples/command-line/</loc>
@@ -54,7 +54,7 @@
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/</loc>
-        <lastmod>2014-03-18T20:47:55-05:00</lastmod>
+        <lastmod>2014-05-20T21:49:03-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/programming-links/</loc>
