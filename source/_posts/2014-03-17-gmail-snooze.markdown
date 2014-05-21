@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Gmail Snooze"
-date: 2014-03-18 20:47
+date: 2014-03-17
 comments: true
 categories:
 ---
