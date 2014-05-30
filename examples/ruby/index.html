@@ -148,6 +148,17 @@ false || nil =&gt; nil
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Instance Methods</h3>
+
+<p>How to get the instance methods of an object:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="nb">Array</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">methods</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h3>Loops</h3>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -203,6 +214,27 @@ false || nil =&gt; nil
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Random Numbers</h3>
+
+<p>Generating random numbers:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">rand</span> <span class="c1"># a random percentage between zero and one</span>
+</span><span class='line'><span class="nb">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># a random integer between zero and four (note that five is excluded)</span>
+</span><span class='line'><span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># a random integer between one and three</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;securerandom&#39;</span>
+</span><span class='line'><span class="no">SecureRandom</span><span class="o">.</span><span class="n">hex</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="o">]</span> <span class="c1"># outputs a random hex string of length 5</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h3>Rspec</h3>
 
 <p>Expectations on arguments:</p>
@@ -213,6 +245,15 @@ false || nil =&gt; nil
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="n">expect</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:new</span><span class="p">)</span><span class="o">.</span><span class="n">with</span> <span class="k">do</span> <span class="o">|</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="o">|</span>
 </span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">arg1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Stacktrace</h3>
+
+<p>Finding the current stacktrace:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Thread</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">backtrace</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
