@@ -38,6 +38,13 @@ See its [documentation](http://ruby-doc.org/core-2.1.0/Enumerable.html#method-i-
 #=> 106, this is the same as 100 + (1 + 2 + 3)
 ```
 
+### Instance Methods
+How to get the instance methods of an object:
+``` ruby
+a = Array.new
+a.methods
+```
+
 ### Loops
 ``` ruby
 # these loops all execute 5 times
@@ -65,7 +72,18 @@ end
 5.times do
   puts 'this is a times block'
 end
+```
 
+### Random Numbers
+Generating random numbers:
+``` ruby
+rand # a random percentage between zero and one
+rand(5) # a random integer between zero and four (note that five is excluded)
+rand(1..3) # a random integer between one and three
+
+
+require 'securerandom'
+SecureRandom.hex[0..5] # outputs a random hex string of length 5
 ```
 
 ### Rspec
@@ -74,6 +92,12 @@ Expectations on arguments:
   expect(obj).to receive(:new).with do |arg1, arg2|
     expect(arg1).to eq(1)
   end
+```
+
+### Stacktrace
+Finding the current stacktrace:
+``` ruby
+Thread.current.backtrace.join("\n")
 ```
 
 ### Tap method

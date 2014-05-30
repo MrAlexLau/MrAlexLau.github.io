@@ -39,6 +39,10 @@ footer: true
 ## Regular Expressions
 * [Rubular](http://rubular.com/) - website for testing regular expressions
 
+## Sublime Text
+* [Keyboard Shortcuts](http://sublime-text-unofficial-documentation.readthedocs.org/en/latest/reference/keyboard_shortcuts_osx.html) - Hotkeys for sublime text
+* [Tips and Tricks](http://blog.generalassemb.ly/sublime-text-3-tips-tricks-shortcuts/)
+
 ## Tmux
 * [Cheat Sheet](https://gist.github.com/MohamedAlaa/2961058) - Cheat sheet for tmux shortcuts
 * [Overview](http://www.danielmiessler.com/study/tmux/) - Tmux overview and shortcuts
