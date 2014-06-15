@@ -108,6 +108,23 @@ false || nil =&gt; nil
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h2>Catching Exceptions</h2>
+
+<p>Catching a generic exception (only useful for debugging):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">begin</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s1">&#39;hai&#39;</span>
+</span><span class='line'><span class="k">rescue</span> <span class="no">Exception</span> <span class="o">=&gt;</span> <span class="n">e</span>
+</span><span class='line'>  <span class="k">raise</span> <span class="n">e</span><span class="o">.</span><span class="n">inspect</span> <span class="c1"># inspect this exception and catch it instead</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h3>Hash.select method</h3>
 
 <p>See its <a href="http://www.ruby-doc.org/core-2.1.0/Hash.html#method-i-select">documentation</a></p>
