@@ -18,10 +18,12 @@ footer: true
 * [How Rebasing Works](http://lostechies.com/joshuaflanagan/2010/09/03/use-gitk-to-understand-git/) - great explanation of how rebasing works in Git
 * [Markdown Syntax](http://daringfireball.net/projects/markdown/syntax) - markdown syntax (useful for git comments)
 
-
 ## Javascript
 * [MicroJS](http://microjs.com/#) - a site for searching for javascript micro-frameworks
 * [45 use javascript examples](http://flippinawesome.org/2013/12/23/45-useful-javascript-tips-tricks-and-best-practices)
+
+## Mac OS X
+* [Use Option as the Meta Key](http://osxdaily.com/2013/02/01/use-option-as-meta-key-in-mac-os-x-terminal/)
 
 ## Ruby
 * [Retry](http://stackoverflow.com/questions/12878888/workaround-for-twitter-api-rate-limiting/12878937#12878937)

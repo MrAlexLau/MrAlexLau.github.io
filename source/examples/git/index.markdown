@@ -7,6 +7,12 @@ sharing: false
 footer: true
 ---
 
+### Checkout a particular version of a file
+From [this StackOverflow answer](http://stackoverflow.com/a/215731):
+```
+git checkout SHAabcde file/to/restore
+```
+
 ### Checkout an earlier version of a branch
 ```
 git co master@{one.month.ago}
@@ -33,6 +39,16 @@ There's also a good [sample global gitignore file](https://gist.github.com/octoc
 ### Rebasing a branch
 ```
 git rebase -i HEAD~2
+```
+
+### Renaming a remote branch
+```
+git remote rename original-name new-name
+```
+
+### Removing a remote branch
+```
+git remote remove origin
 ```
 
 ### Pruning local branches

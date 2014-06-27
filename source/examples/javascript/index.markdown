@@ -12,3 +12,9 @@ footer: true
 elms = { a: 1, b: 2, c: 3 }
 Object.keys(elms).length
 ```
+
+## Optional Params
+From [this StackOverflow answer](http://stackoverflow.com/a/148918):
+``` javascript
+optionalArg = (typeof optionalArg === "undefined") ? "defaultValue" : optionalArg;
+```
