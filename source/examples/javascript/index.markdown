@@ -7,7 +7,8 @@ sharing: false
 footer: true
 ---
 
-References:
-
-- [45 use javascript examples](http://flippinawesome.org/2013/12/23/45-useful-javascript-tips-tricks-and-best-practices)
-
+## Counting Keys in an Object
+``` javascript
+elms = { a: 1, b: 2, c: 3 }
+Object.keys(elms).length
+```

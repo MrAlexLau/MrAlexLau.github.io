@@ -21,6 +21,7 @@ footer: true
 
 ## Javascript
 * [MicroJS](http://microjs.com/#) - a site for searching for javascript micro-frameworks
+* [45 use javascript examples](http://flippinawesome.org/2013/12/23/45-useful-javascript-tips-tricks-and-best-practices)
 
 ## Ruby
 * [Retry](http://stackoverflow.com/questions/12878888/workaround-for-twitter-api-rate-limiting/12878937#12878937)
