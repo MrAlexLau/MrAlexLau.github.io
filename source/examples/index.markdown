@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "examples"
+title: "code examples"
 date: 2014-01-12 22:43
 comments: false
 sharing: false
