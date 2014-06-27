@@ -9,7 +9,10 @@
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Javascript References: 45 use javascript examples Recent Posts RubyGems Versioning Gmail Snooze My 4 Stages of Version Control Autostarting Homebrew &hellip;">
+  <meta name="description" content="Javascript Counting Keys in an Object 1
+2
+elms = { a: 1, b: 2, c: 3 }
+Object.keys(elms).length Optional Params From this StackOverflow answer: 1 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,11 +85,22 @@
     <h1 class="entry-title">Javascript</h1>
   </header>
   
-  <p>References:</p>
+  <h2>Counting Keys in an Object</h2>
 
-<ul>
-<li><a href="http://flippinawesome.org/2013/12/23/45-useful-javascript-tips-tricks-and-best-practices">45 use javascript examples</a></li>
-</ul>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">elms</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">a</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">b</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">c</span><span class="o">:</span> <span class="mi">3</span> <span class="p">}</span>
+</span><span class='line'><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">elms</span><span class="p">).</span><span class="nx">length</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Optional Params</h2>
+
+<p>From <a href="http://stackoverflow.com/a/148918">this StackOverflow answer</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">optionalArg</span> <span class="o">=</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">optionalArg</span> <span class="o">===</span> <span class="s2">&quot;undefined&quot;</span><span class="p">)</span> <span class="o">?</span> <span class="s2">&quot;defaultValue&quot;</span> <span class="o">:</span> <span class="nx">optionalArg</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
   

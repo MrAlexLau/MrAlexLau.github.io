@@ -9,8 +9,8 @@
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Git Checkout an earlier version of a branch 1
-git co master@{one.month.ago} Create a new branch (while specifying your current branch as upstream) 1 &hellip;">
+  <meta name="description" content="Git Checkout a particular version of a file From this StackOverflow answer: 1
+git checkout SHAabcde file/to/restore Checkout an earlier version of a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,7 +83,15 @@ git co master@{one.month.ago} Create a new branch (while specifying your current
     <h1 class="entry-title">Git</h1>
   </header>
   
-  <h3>Checkout an earlier version of a branch</h3>
+  <h3>Checkout a particular version of a file</h3>
+
+<p>From <a href="http://stackoverflow.com/a/215731">this StackOverflow answer</a>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout SHAabcde file/to/restore</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Checkout an earlier version of a branch</h3>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>git co master@{one.month.ago}</span></code></pre></td></tr></table></div></figure>
@@ -117,6 +125,18 @@ git co master@{one.month.ago} Create a new branch (while specifying your current
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>git rebase -i HEAD~2</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Renaming a remote branch</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote rename original-name new-name</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Removing a remote branch</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote remove origin</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Pruning local branches</h3>
