@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My 4 Stages of Version Control - Bits on Bits on Bits</title>
+  <title>Bits on Bits on Bits</title>
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Version control &ndash; it&rsquo;s great. It&rsquo;s also amazing how you don&rsquo;t realize how much better it can be until you use a better tool. &hellip;">
+  <meta name="description" content="From the RubyGems guide: PATCH 0.0.x level changes for implementation level detail changes, such as small bug fixes MINOR 0.x.0 level changes for any &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control">
+  <link rel="canonical" href="http://bitsonbitsonbits.com/blog">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Bits on Bits on Bits" type="application/atom+xml">
@@ -74,12 +74,97 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div>
-<article class="hentry" role="article">
+      <div class="blog-index">
   
+  
+  
+    <article>
+      
   <header>
     
-      <h1 class="entry-title">My 4 Stages of Version Control</h1>
+      <h1 class="entry-title"><a href="/blog/rubygems-versioning/">RubyGems Versioning</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-18T20:17:00-05:00" pubdate data-updated="true">Mar 18<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>From the <a href="http://guides.rubygems.org/patterns/#semantic_versioning">RubyGems guide</a>:</p>
+
+<blockquote><p><strong>PATCH</strong> 0.0.x level changes for implementation level detail changes, such as small bug fixes</p>
+
+<p><strong>MINOR</strong> 0.x.0 level changes for any backwards compatible API changes, such as new functionality/features</p>
+
+<p><strong>MAJOR</strong> x.0.0 level changes for backwards incompatible API changes, such as changes that will break existing users code if they update</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/gmail-snooze/">Gmail Snooze</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-17T00:00:00-05:00" pubdate data-updated="true">Mar 17<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m a huge fan of the app <a href="http://www.mailboxapp.com/">Mailbox</a> for IOS. In my opinion, its killer feature is the ability to &lsquo;snooze&rsquo; emails, so that they are hidden for the time being, but reappear when they are relevant again.</p>
+
+<p>I wanted to have the same functionality through the Gmail web interface, and while googling I stumbled upon a Gmail <a href="http://gmailblog.blogspot.com/2011/07/gmail-snooze-with-apps-script.html">blog post that explains just how to do that</a>. It turns out that this has actually been available for quite some time (since 2011).</p>
+
+<p>What surprised me even more is that you can write custom javascript scripts to process your email, and that these scripts can be executed on a recurring basis.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/my-4-stages-of-version-control/">My 4 Stages of Version Control</a></h1>
     
     
       <p class="meta">
@@ -102,7 +187,7 @@
   </header>
 
 
-<div class="entry-content"><p>Version control &ndash; it&rsquo;s great. It&rsquo;s also amazing how you don&rsquo;t realize how much better it <em>can</em> be until you use a better tool. Personally, I like to think I&rsquo;ve gone through 4 main &ldquo;stages&rdquo; of version control, each stage being a more useful and effective addition to my workflow than the previous.</p>
+  <div class="entry-content"><p>Version control &ndash; it&rsquo;s great. It&rsquo;s also amazing how you don&rsquo;t realize how much better it <em>can</em> be until you use a better tool. Personally, I like to think I&rsquo;ve gone through 4 main &ldquo;stages&rdquo; of version control, each stage being a more useful and effective addition to my workflow than the previous.</p>
 
 <h2>Stage 1 &ndash; Local Backups</h2>
 
@@ -128,54 +213,68 @@
 
 <p>Just when I was telling my friends how great svn is, git came along and changed everthing. Changes are stored extremely efficiently, making the act of pulling changes quick even when there are a lot of files modified. Branches with git are &ldquo;cheap&rdquo; in that they are easily mergeable with other branches. With git, life is good. With github, life is great. I&rsquo;ll go into that more in another post.</p>
 </div>
+  
+  
 
 
-  <footer>
-    <p class="meta">
+    </article>
+  
+  
+    <article>
       
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Alex Lau</span></span>
-
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/version-control/'>version-control</a>
-  
-</span>
-
-
-    </p>
+  <header>
     
-      <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control/" data-via="" data-counturl="http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control/" >Tweet</a>
-  
-  
-  
-</div>
-
+      <h1 class="entry-title"><a href="/blog/autostarting-homebrew-packages/">Autostarting Homebrew Packages</a></h1>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/autostarting-homebrew-packages/" title="Previous Post: Autostarting Homebrew Packages">&laquo; Autostarting Homebrew Packages</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/gmail-snooze/" title="Next Post: Gmail Snooze">Gmail Snooze &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
+    
+      <p class="meta">
+        
 
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-27T19:48:00-05:00" pubdate data-updated="true">Oct 27<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://brew.sh">Homebrew</a> has made my life a lot easier when setting up new mac development environments. To install a new package is as easy as typing <code>brew install mysql</code> on the command line. (Other programs I commonly install with Homebrew are git, mongodb, and postgresql.)</p>
+
+<p>Sometimes you want a program to start a daemon (background) process when you log in. For example, I can start mongodb&rsquo;s daemon with the <code>mongod</code> command, but it&rsquo;d be nicer if it just started automatically.</p>
+
+<p>Fortunately Homebrew has a way to do this! Simply type <code>brew info mongo</code>. If mongod isn&rsquo;t set up to run automatically, the last bit of output will look like this:</p>
+
+<pre><code>To have launchd start mongodb at login:
+    ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
+Then to load mongodb now:
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+Or, if you don't want/need launchctl, you can just run:
+    mongod
+</code></pre>
+
+<p>Note how you not only see how to start mongodb upon login, but also it shows you the name of mongo&rsquo;s daemon process, mongod.</p>
 </div>
-  </section>
+  
+  
 
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
 </div>
-
 <aside class="sidebar">
   
     <section>
@@ -208,7 +307,6 @@
   
 </aside>
 
-
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -223,10 +321,7 @@
       var disqus_shortname = 'bitsonbitsonbits';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control/';
-        var disqus_url = 'http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
