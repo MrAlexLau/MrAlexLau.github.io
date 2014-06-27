@@ -20,6 +20,15 @@ See its [documentation](http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-s
 [1,2,3,4,5].select { |num|  num.even?  }   #=> [2, 4]
 [1,2,3,4,5].select { |num|  num > 10  }   #=> []
 ```
+## Catching Exceptions
+Catching a generic exception (only useful for debugging):
+```ruby
+begin
+  puts 'hai'
+rescue Exception => e
+  raise e.inspect # inspect this exception and catch it instead
+end
+```
 
 ### Hash.select method
 See its [documentation](http://www.ruby-doc.org/core-2.1.0/Hash.html#method-i-select)

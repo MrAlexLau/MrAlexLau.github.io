@@ -12,3 +12,7 @@ footer: true
 :not(:last-child) { /* styles */ }
 ```
 
+### Watching a Sass File
+``` ruby
+sass --watch style.scss:style.css
+```

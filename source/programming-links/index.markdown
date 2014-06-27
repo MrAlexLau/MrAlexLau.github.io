@@ -8,7 +8,7 @@ footer: true
 ---
 
 ## Chrome
-* [Hotkeys for Devtools](http://anti-code.com/devtools-cheatsheet/)
+* [Hotkeys for Devtools](https://developer.chrome.com/devtools/docs/shortcuts)
 
 ## CSS
 * [The Nth Selector](http://nthmaster.com/)
