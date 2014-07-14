@@ -54,6 +54,11 @@ a = Array.new
 a.methods
 ```
 
+### Loading Dev DB Schema into Test
+```
+rake db:test:load
+```
+
 ### Loops
 ``` ruby
 # these loops all execute 5 times

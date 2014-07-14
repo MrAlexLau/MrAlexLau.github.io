@@ -13,6 +13,9 @@ footer: true
 ## CSS
 * [The Nth Selector](http://nthmaster.com/)
 
+## Devops
+* [Obtaining an SSL Certificate](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-with-a-free-signed-ssl-certificate-on-a-vps)
+
 ## Git
 * [Global Gitignore](https://help.github.com/articles/ignoring-files#create-a-global-gitignore) - creating a global gitignore file
 * [How Rebasing Works](http://lostechies.com/joshuaflanagan/2010/09/03/use-gitk-to-understand-git/) - great explanation of how rebasing works in Git
@@ -45,6 +48,7 @@ footer: true
 ## Sublime Text
 * [Keyboard Shortcuts](http://sublime-text-unofficial-documentation.readthedocs.org/en/latest/reference/keyboard_shortcuts_osx.html) - Hotkeys for sublime text
 * [Tips and Tricks](http://blog.generalassemb.ly/sublime-text-3-tips-tricks-shortcuts/)
+* [Rubular](http://rubular.com/) - website for testing regular expressions
 
 ## Tmux
 * [Cheat Sheet](https://gist.github.com/MohamedAlaa/2961058) - Cheat sheet for tmux shortcuts
