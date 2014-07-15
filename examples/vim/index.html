@@ -9,9 +9,7 @@
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Vim Find and Replace Find and replace globally in a file: 1
-:s/foo/bar/g Find and replace between lines 8 and 10: 1
-:8,10 s/foo/bar/g Add c to the &hellip;">
+  <meta name="description" content="Vim Change Command: c Advanced example: From within a single quote, eg &ndash; &lsquo;in the middle of this&rsquo; c + i +' Which stands for Change &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,7 +81,17 @@
     <h1 class="entry-title">Vim</h1>
   </header>
   
-  <h3>Find and Replace</h3>
+  <h3>Change</h3>
+
+<p>Command: <code>c</code></p>
+
+<p>Advanced example: From within a single quote, eg &ndash; <em>&lsquo;in the middle of this&rsquo;</em></p>
+
+<p><code>c</code> + <code>i</code> +<code>'</code></p>
+
+<p>Which stands for Change, Inside, Single Quote</p>
+
+<h3>Find and Replace</h3>
 
 <p>Find and replace globally in a file:</p>
 
@@ -97,14 +105,53 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>:8,10 s/foo/bar/g</span></code></pre></td></tr></table></div></figure>
 
 
-<p>
-Add c to the end of the command to be prompted for a confirmation at each find/replace:</p>
+<p>Add c to the end of the command to be prompted for a confirmation at each find/replace:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>:8,10 s/foo/bar/gc</span></code></pre></td></tr></table></div></figure>
 
 
-<p></p>
+<h3>Repeat the Last Command</h3>
+
+<p>Command: <code>.</code></p>
+
+<h3>Select the Entire Line</h3>
+
+<p>Command: <code>V</code> (note that it&rsquo;s capitalized)</p>
+
+<h3>Til (aka Until)</h3>
+
+<h4>Exclusive Til</h4>
+
+<p>Command: <code>t</code></p>
+
+<p>Advanced example: From the current position, visually select until the comma</p>
+
+<p><code>v</code> + <code>t</code> +<code>,</code></p>
+
+<p>This selection <em>excludes</em> the comma itself.</p>
+
+<h3>Til (aka Until)</h3>
+
+<h4>Inclusive Til</h4>
+
+<p>Command: <code>f</code></p>
+
+<p>Advanced example: From the current position, visually select until the comma</p>
+
+<p><code>v</code> + <code>f</code> +<code>,</code></p>
+
+<p>This selection <em>includes</em> the comma itself.</p>
+
+<h3>Visual Selection</h3>
+
+<p>Command: <code>v</code></p>
+
+<p>Advanced example: From within a single quote, eg &ndash; <em>&lsquo;in the middle of this&rsquo;</em></p>
+
+<p><code>v</code> + <code>i</code> +<code>'</code></p>
+
+<p>Which stands for Visually Select, Inside, Single Quote</p>
 
 <h3>Vimrc settings file</h3>
 
