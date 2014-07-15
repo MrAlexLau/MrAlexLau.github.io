@@ -57,6 +57,22 @@ After fetching, remove any remote-tracking branches which no longer exist on the
 git fetch -p
 ```
 
+### Tags
+List tags:
+```
+git tag
+```
+
+Create a new tag:
+```
+git tag v201412-rc1
+```
+
+Push a tag:
+```
+git push origin v201412-rc1
+```
+
 ### Undoing the latest local commit
 ```
 git reset --soft 'HEAD^1'
