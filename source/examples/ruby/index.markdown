@@ -17,10 +17,27 @@ false || nil => nil
 ### Array.select method
 See its [documentation](http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-select)
 ``` ruby
-[1,2,3,4,5].select { |num|  num.even?  }   #=> [2, 4]
-[1,2,3,4,5].select { |num|  num > 10  }   #=> []
+a = [1, 2, 3, 4, 5]
+a.select { |num|  num.even?  } #=> [2, 4]
+a #=> [1, 2, 3, 4, 5] (the original array is preserved)
 ```
-## Catching Exceptions
+
+``` ruby
+a = [1, 2, 3, 4, 5]
+a.select { |num|  num > 10  } #=> []
+a #=> [1, 2, 3, 4, 5] (the original array is preserved)
+```
+
+### Array.select! method
+aka Array.keep_if
+
+``` ruby
+a = %w{ a b c d e f }
+a.keep_if {|v| v =~ /[aeiou]/}
+a #=> ["a", "e"]
+```
+
+### Catching Exceptions
 Catching a generic exception (only useful for debugging):
 ```ruby
 begin
@@ -103,9 +120,16 @@ SecureRandom.hex[0..5] # outputs a random hex string of length 5
 ### Rspec
 Expectations on arguments:
 ``` ruby
-  expect(obj).to receive(:new).with do |arg1, arg2|
-    expect(arg1).to eq(1)
-  end
+expect(obj).to receive(:new).with do |arg1, arg2|
+  expect(arg1).to eq(1)
+end
+```
+
+#### Rspec with Capybara
+Use `save_and_open_page` to help debug integration tests:
+``` ruby
+visit '/events/new'
+save_and_open_page
 ```
 
 ### Stacktrace
