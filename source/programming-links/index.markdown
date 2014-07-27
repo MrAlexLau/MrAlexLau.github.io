@@ -37,6 +37,7 @@ footer: true
 * [Better Errors](https://github.com/charliesome/better_errors) - an amazing gem that lets you run a REPL from the rails error page
 * [Better Specs](http://betterspecs.org/) - do's and do not's for writing specs
 * [Braise](https://github.com/MrAlexLau/braise) - my gem that lets you raise errors in less keystrokes with colored output
+* [Configuring Database Cleaner](http://devblog.avdi.org/2012/08/31/configuring-database_cleaner-with-rails-rspec-capybara-and-selenium/)
 * [Finding HTML Fragments](http://robots.thoughtbot.com/use-capybara-on-any-html-fragment-or-page) - Match HTML fragments in rspec
 * [Rails Composer](http://railsapps.github.io/rails-composer/) - gives you a wizard when setting up a rails project. Never start a new project without it!
 

@@ -125,6 +125,21 @@ expect(obj).to receive(:new).with do |arg1, arg2|
 end
 ```
 
+#### Setting focus options
+``` ruby
+  RSpec.configure do |config|
+    # ...
+
+    # only run specs where the focus option is set
+    # (or run all of them if no focus option)
+
+    config.filter_run focus: true
+    config.run_all_when_everything_filtered = true
+
+    # ...
+  end
+```
+
 #### Rspec with Capybara
 Use `save_and_open_page` to help debug integration tests:
 ``` ruby
