@@ -285,6 +285,33 @@ false || nil =&gt; nil
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h4>Setting focus options</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="no">RSpec</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>    <span class="c1"># ...</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1"># only run specs where the focus option is set</span>
+</span><span class='line'>    <span class="c1"># (or run all of them if no focus option)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">config</span><span class="o">.</span><span class="n">filter_run</span> <span class="ss">focus</span><span class="p">:</span> <span class="kp">true</span>
+</span><span class='line'>    <span class="n">config</span><span class="o">.</span><span class="n">run_all_when_everything_filtered</span> <span class="o">=</span> <span class="kp">true</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1"># ...</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h4>Rspec with Capybara</h4>
 
 <p>Use <code>save_and_open_page</code> to help debug integration tests:</p>
