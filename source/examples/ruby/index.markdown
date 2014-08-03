@@ -7,6 +7,90 @@ sharing: false
 footer: true
 ---
 
+### attr_accessor, attr_reader, attr_writer, attr_accessible, attr_protected
+`attr_reader` is shorthand for a getter method:
+``` ruby
+# this:
+class Person
+  attr_reader :name
+end
+
+# is the same as:
+class Person
+  def name
+    @name
+  end
+end
+```
+
+`attr_writer` is shorthand for a setter method:
+``` ruby
+# this:
+class Person
+  attr_writer :name
+end
+
+# is the same as:
+class Person
+  def name=(str)
+    @name = str
+  end
+end
+```
+
+`attr_accessor` is shorthand for both attr_reader and attr_writer:
+``` ruby
+# this:
+class Person
+  attr_accessor :name
+end
+
+# is the same as:
+class Person
+  def name
+    @name
+  end
+
+  def name=(str)
+    @name = str
+  end
+end
+```
+
+`attr_accessible` is part of ActiveRecord, and lets you **whitelist** attributes
+that you can use with mass-assignment
+
+`attr_protected` is part of ActiveRecord, and lets you **blacklist** attributes
+that you can use with mass-assignment
+
+Note 1: do not use `attr_accessible` and `attr_protected` together.
+You must use one or the other.
+
+Note 2: Rails 4 has moved away from `attr_accessible` and `attr_protected` and
+instead uses the concept of strong parameters, where you explicitly whitelist
+params inside the controller.
+[Example](http://stackoverflow.com/a/17371364/2339716):
+``` ruby
+class PeopleController < ApplicationController
+  def create
+    Person.create(person_params)
+  end
+
+  #...
+
+  private
+
+  def person_params
+    params.require(:person).permit(:name, :age, pets_attributes: [:name, :category])
+  end
+end
+```
+
+
+
+
+
+
 ### Using !!
 Use !! to coerce nil into false:
 ``` ruby
@@ -18,13 +102,13 @@ false || nil => nil
 See its [documentation](http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-select)
 ``` ruby
 a = [1, 2, 3, 4, 5]
-a.select { |num|  num.even?  } #=> [2, 4]
+a.select { |num|  num.even? } #=> [2, 4]
 a #=> [1, 2, 3, 4, 5] (the original array is preserved)
 ```
 
 ``` ruby
 a = [1, 2, 3, 4, 5]
-a.select { |num|  num > 10  } #=> []
+a.select { |num|  num > 10 } #=> []
 a #=> [1, 2, 3, 4, 5] (the original array is preserved)
 ```
 
@@ -43,7 +127,7 @@ Catching a generic exception (only useful for debugging):
 begin
   puts 'hai'
 rescue Exception => e
-  raise e.inspect # inspect this exception and catch it instead
+  raise e.inspect # re-raise and inspect this exception
 end
 ```
 

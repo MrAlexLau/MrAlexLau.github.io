@@ -2,8 +2,8 @@
 layout: page
 title: "javascript"
 date: 2014-01-12 17:56
-comments: false 
-sharing: false 
+comments: false
+sharing: false
 footer: true
 ---
 
@@ -17,4 +17,14 @@ Object.keys(elms).length
 From [this StackOverflow answer](http://stackoverflow.com/a/148918):
 ``` javascript
 optionalArg = (typeof optionalArg === "undefined") ? "defaultValue" : optionalArg;
+```
+
+
+## Mocking the userAgent String
+(useful for testing)
+From [this StackOverflow answer](http://stackoverflow.com/a/1307088):
+``` javascript
+navigator.__defineGetter__('userAgent', function(){
+    return 'foo' // customized user agent
+});
 ```
