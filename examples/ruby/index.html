@@ -9,11 +9,17 @@
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Ruby Using !! Use !! to coerce nil into false: 1
+  <meta name="description" content="Ruby attr_accessor, attr_reader, attr_writer, attr_accessible, attr_protected attr_reader is shorthand for a getter method: 1
 2
-false || nil =&gt; nil
-!!(false || nil) =&gt; false Array.select method See its documentation 1
-2 &hellip;">
+3
+4
+5
+6
+7
+8
+9
+10
+11 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,7 +91,141 @@ false || nil =&gt; nil
     <h1 class="entry-title">Ruby</h1>
   </header>
   
-  <h3>Using !!</h3>
+  <h3>attr_accessor, attr_reader, attr_writer, attr_accessible, attr_protected</h3>
+
+<p><code>attr_reader</code> is shorthand for a getter method:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># this:</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">Person</span>
+</span><span class='line'>  <span class="kp">attr_reader</span> <span class="ss">:name</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># is the same as:</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">Person</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">name</span>
+</span><span class='line'>    <span class="vi">@name</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>attr_writer</code> is shorthand for a setter method:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># this:</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">Person</span>
+</span><span class='line'>  <span class="kp">attr_writer</span> <span class="ss">:name</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># is the same as:</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">Person</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">name</span><span class="o">=</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+</span><span class='line'>    <span class="vi">@name</span> <span class="o">=</span> <span class="n">str</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>attr_accessor</code> is shorthand for both attr_reader and attr_writer:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># this:</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">Person</span>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:name</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># is the same as:</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">Person</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">name</span>
+</span><span class='line'>    <span class="vi">@name</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">name</span><span class="o">=</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+</span><span class='line'>    <span class="vi">@name</span> <span class="o">=</span> <span class="n">str</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>attr_accessible</code> is part of ActiveRecord, and lets you <strong>whitelist</strong> attributes
+that you can use with mass-assignment</p>
+
+<p><code>attr_protected</code> is part of ActiveRecord, and lets you <strong>blacklist</strong> attributes
+that you can use with mass-assignment</p>
+
+<p>Note 1: do not use <code>attr_accessible</code> and <code>attr_protected</code> together.
+You must use one or the other.</p>
+
+<p>Note 2: Rails 4 has moved away from <code>attr_accessible</code> and <code>attr_protected</code> and
+instead uses the concept of strong parameters, where you explicitly whitelist
+params inside the controller.
+<a href="http://stackoverflow.com/a/17371364/2339716">Example</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">PeopleController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">create</span>
+</span><span class='line'>    <span class="no">Person</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">person_params</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">#...</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">private</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">person_params</span>
+</span><span class='line'>    <span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:person</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:age</span><span class="p">,</span> <span class="n">pets_attributes</span><span class="p">:</span> <span class="o">[</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:category</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Using !!</h3>
 
 <p>Use !! to coerce nil into false:</p>
 
@@ -104,7 +244,7 @@ false || nil =&gt; nil
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
-</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span>  <span class="n">num</span><span class="o">.</span><span class="n">even?</span>  <span class="p">}</span> <span class="c1">#=&gt; [2, 4]</span>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span>  <span class="n">num</span><span class="o">.</span><span class="n">even?</span> <span class="p">}</span> <span class="c1">#=&gt; [2, 4]</span>
 </span><span class='line'><span class="n">a</span> <span class="c1">#=&gt; [1, 2, 3, 4, 5] (the original array is preserved)</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -115,7 +255,7 @@ false || nil =&gt; nil
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
-</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span>  <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10</span>  <span class="p">}</span> <span class="c1">#=&gt; []</span>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span>  <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="p">}</span> <span class="c1">#=&gt; []</span>
 </span><span class='line'><span class="n">a</span> <span class="c1">#=&gt; [1, 2, 3, 4, 5] (the original array is preserved)</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -145,7 +285,7 @@ false || nil =&gt; nil
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">begin</span>
 </span><span class='line'>  <span class="nb">puts</span> <span class="s1">&#39;hai&#39;</span>
 </span><span class='line'><span class="k">rescue</span> <span class="no">Exception</span> <span class="o">=&gt;</span> <span class="n">e</span>
-</span><span class='line'>  <span class="k">raise</span> <span class="n">e</span><span class="o">.</span><span class="n">inspect</span> <span class="c1"># inspect this exception and catch it instead</span>
+</span><span class='line'>  <span class="k">raise</span> <span class="n">e</span><span class="o">.</span><span class="n">inspect</span> <span class="c1"># re-raise and inspect this exception</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
