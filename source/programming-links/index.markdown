@@ -29,6 +29,7 @@ footer: true
 * [Use Option as the Meta Key](http://osxdaily.com/2013/02/01/use-option-as-meta-key-in-mac-os-x-terminal/)
 
 ## Ruby
+* [Formatting dates](http://apidock.com/ruby/DateTime/strftime)
 * [Retry](http://stackoverflow.com/questions/12878888/workaround-for-twitter-api-rate-limiting/12878937#12878937)
 * [Tap](http://www.seejohncode.com/2012/01/02/ruby-tap-that/)
 

@@ -7,6 +7,36 @@ sharing: false
 footer: true
 ---
 
+### Using !!
+Use !! to coerce nil into false:
+``` ruby
+false || nil => nil
+!!(false || nil) => false
+```
+
+### Array.select method
+See its [documentation](http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-select)
+``` ruby
+a = [1, 2, 3, 4, 5]
+a.select { |num|  num.even? } #=> [2, 4]
+a #=> [1, 2, 3, 4, 5] (the original array is preserved)
+```
+
+``` ruby
+a = [1, 2, 3, 4, 5]
+a.select { |num|  num > 10 } #=> []
+a #=> [1, 2, 3, 4, 5] (the original array is preserved)
+```
+
+### Array.select! method
+aka Array.keep_if
+
+``` ruby
+a = %w{ a b c d e f }
+a.keep_if {|v| v =~ /[aeiou]/}
+a #=> ["a", "e"]
+```
+
 ### attr_accessor, attr_reader, attr_writer, attr_accessible, attr_protected
 `attr_reader` is shorthand for a getter method:
 ``` ruby
@@ -86,41 +116,6 @@ class PeopleController < ApplicationController
 end
 ```
 
-
-
-
-
-
-### Using !!
-Use !! to coerce nil into false:
-``` ruby
-false || nil => nil
-!!(false || nil) => false
-```
-
-### Array.select method
-See its [documentation](http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-select)
-``` ruby
-a = [1, 2, 3, 4, 5]
-a.select { |num|  num.even? } #=> [2, 4]
-a #=> [1, 2, 3, 4, 5] (the original array is preserved)
-```
-
-``` ruby
-a = [1, 2, 3, 4, 5]
-a.select { |num|  num > 10 } #=> []
-a #=> [1, 2, 3, 4, 5] (the original array is preserved)
-```
-
-### Array.select! method
-aka Array.keep_if
-
-``` ruby
-a = %w{ a b c d e f }
-a.keep_if {|v| v =~ /[aeiou]/}
-a #=> ["a", "e"]
-```
-
 ### Catching Exceptions
 Catching a generic exception (only useful for debugging):
 ```ruby
@@ -130,6 +125,9 @@ rescue Exception => e
   raise e.inspect # re-raise and inspect this exception
 end
 ```
+
+### Formatting dates
+See http://apidock.com/ruby/DateTime/strftime
 
 ### Hash.select method
 See its [documentation](http://www.ruby-doc.org/core-2.1.0/Hash.html#method-i-select)
@@ -211,17 +209,17 @@ end
 
 #### Setting focus options
 ``` ruby
-  RSpec.configure do |config|
-    # ...
+RSpec.configure do |config|
+  # ...
 
-    # only run specs where the focus option is set
-    # (or run all of them if no focus option)
+  # only run specs where the focus option is set
+  # (or run all of them if no focus option)
 
-    config.filter_run focus: true
-    config.run_all_when_everything_filtered = true
+  config.filter_run focus: true
+  config.run_all_when_everything_filtered = true
 
-    # ...
-  end
+  # ...
+end
 ```
 
 #### Rspec with Capybara
