@@ -9,17 +9,11 @@
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Ruby attr_accessor, attr_reader, attr_writer, attr_accessible, attr_protected attr_reader is shorthand for a getter method: 1
+  <meta name="description" content="Ruby Using !! Use !! to coerce nil into false: 1
 2
-3
-4
-5
-6
-7
-8
-9
-10
-11 &hellip;">
+false || nil =&gt; nil
+!!(false || nil) =&gt; false Array.select method See its documentation 1
+2 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,7 +85,55 @@
     <h1 class="entry-title">Ruby</h1>
   </header>
   
-  <h3>attr_accessor, attr_reader, attr_writer, attr_accessible, attr_protected</h3>
+  <h3>Using !!</h3>
+
+<p>Use !! to coerce nil into false:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="kp">false</span> <span class="o">||</span> <span class="kp">nil</span> <span class="o">=&gt;</span> <span class="kp">nil</span>
+</span><span class='line'><span class="o">!!</span><span class="p">(</span><span class="kp">false</span> <span class="o">||</span> <span class="kp">nil</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Array.select method</h3>
+
+<p>See its <a href="http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-select">documentation</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span>  <span class="n">num</span><span class="o">.</span><span class="n">even?</span> <span class="p">}</span> <span class="c1">#=&gt; [2, 4]</span>
+</span><span class='line'><span class="n">a</span> <span class="c1">#=&gt; [1, 2, 3, 4, 5] (the original array is preserved)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span>  <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="p">}</span> <span class="c1">#=&gt; []</span>
+</span><span class='line'><span class="n">a</span> <span class="c1">#=&gt; [1, 2, 3, 4, 5] (the original array is preserved)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Array.select! method</h3>
+
+<p>aka Array.keep_if</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="sx">%w{ a b c d e f }</span>
+</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">keep_if</span> <span class="p">{</span><span class="o">|</span><span class="n">v</span><span class="o">|</span> <span class="n">v</span> <span class="o">=~</span> <span class="sr">/[aeiou]/</span><span class="p">}</span>
+</span><span class='line'><span class="n">a</span> <span class="c1">#=&gt; [&quot;a&quot;, &quot;e&quot;]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>attr_accessor, attr_reader, attr_writer, attr_accessible, attr_protected</h3>
 
 <p><code>attr_reader</code> is shorthand for a getter method:</p>
 
@@ -225,54 +267,6 @@ params inside the controller.
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Using !!</h3>
-
-<p>Use !! to coerce nil into false:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="kp">false</span> <span class="o">||</span> <span class="kp">nil</span> <span class="o">=&gt;</span> <span class="kp">nil</span>
-</span><span class='line'><span class="o">!!</span><span class="p">(</span><span class="kp">false</span> <span class="o">||</span> <span class="kp">nil</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kp">false</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Array.select method</h3>
-
-<p>See its <a href="http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-select">documentation</a></p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
-</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span>  <span class="n">num</span><span class="o">.</span><span class="n">even?</span> <span class="p">}</span> <span class="c1">#=&gt; [2, 4]</span>
-</span><span class='line'><span class="n">a</span> <span class="c1">#=&gt; [1, 2, 3, 4, 5] (the original array is preserved)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
-</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span>  <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="p">}</span> <span class="c1">#=&gt; []</span>
-</span><span class='line'><span class="n">a</span> <span class="c1">#=&gt; [1, 2, 3, 4, 5] (the original array is preserved)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Array.select! method</h3>
-
-<p>aka Array.keep_if</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="sx">%w{ a b c d e f }</span>
-</span><span class='line'><span class="n">a</span><span class="o">.</span><span class="n">keep_if</span> <span class="p">{</span><span class="o">|</span><span class="n">v</span><span class="o">|</span> <span class="n">v</span> <span class="o">=~</span> <span class="sr">/[aeiou]/</span><span class="p">}</span>
-</span><span class='line'><span class="n">a</span> <span class="c1">#=&gt; [&quot;a&quot;, &quot;e&quot;]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
 <h3>Catching Exceptions</h3>
 
 <p>Catching a generic exception (only useful for debugging):</p>
@@ -289,6 +283,10 @@ params inside the controller.
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
+
+<h3>Formatting dates</h3>
+
+<p>See <a href="http://apidock.com/ruby/DateTime/strftime">http://apidock.com/ruby/DateTime/strftime</a></p>
 
 <h3>Hash.select method</h3>
 
@@ -438,17 +436,17 @@ params inside the controller.
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="no">RSpec</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
-</span><span class='line'>    <span class="c1"># ...</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">RSpec</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>  <span class="c1"># ...</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="c1"># only run specs where the focus option is set</span>
-</span><span class='line'>    <span class="c1"># (or run all of them if no focus option)</span>
+</span><span class='line'>  <span class="c1"># only run specs where the focus option is set</span>
+</span><span class='line'>  <span class="c1"># (or run all of them if no focus option)</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="n">config</span><span class="o">.</span><span class="n">filter_run</span> <span class="ss">focus</span><span class="p">:</span> <span class="kp">true</span>
-</span><span class='line'>    <span class="n">config</span><span class="o">.</span><span class="n">run_all_when_everything_filtered</span> <span class="o">=</span> <span class="kp">true</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">filter_run</span> <span class="ss">focus</span><span class="p">:</span> <span class="kp">true</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">run_all_when_everything_filtered</span> <span class="o">=</span> <span class="kp">true</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="c1"># ...</span>
-</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="c1"># ...</span>
+</span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
 

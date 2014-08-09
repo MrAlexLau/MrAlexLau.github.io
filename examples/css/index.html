@@ -5,13 +5,15 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>css - Bits on Bits on Bits</title>
+  <title>css / sass - Bits on Bits on Bits</title>
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Css All Except Last Child Selector 1
-:not(:last-child) { /* styles */ } Watching a Sass File 1
-sass --watch style.scss:style.css Recent Posts &hellip;">
+  <meta name="description" content="Css / Sass All Except Last Child Selector 1
+2
+3
+:not(:last-child) { /* styles */
+} Extend in Sass Given the example from the sass documentation, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,19 +82,191 @@ sass --watch style.scss:style.css Recent Posts &hellip;">
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Css</h1>
+    <h1 class="entry-title">Css / Sass</h1>
   </header>
   
   <h3>All Except Last Child Selector</h3>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>:not(:last-child) { /* styles */ }</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nd">:not</span><span class="o">(</span><span class="nd">:last-child</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c">/* styles */</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Extend in Sass</h3>
+
+<p>Given the example from the <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend">sass documentation</a>, given this sass:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.error</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="m">#f00</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="m">#fdd</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.seriousError</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">@</span><span class="n">extend</span> <span class="o">.</span><span class="n">error</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>its compiled css is:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.error</span><span class="o">,</span> <span class="nc">.seriousError</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="m">#f00</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="m">#fdd</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nc">.seriousError</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note that the styles are comma separated, decreasing the amount of duplicate code (rather than re-rendering each style inside the <code>.seriousError</code> selector). <a href="http://css-tricks.com/the-extend-concept/">This can lead to some unintended behavior</a>:
+ &ndash; If you extend another selector, selectors nested under the original are also extended
+ &ndash; You cannot extend a selector which is nested, eg &ndash; <code>@extend div span</code> will not work</p>
+
+<p>As a rule of thumb, you can use <code>@extend</code> instead of including a <code>@include a_mixin</code> when there are no arguments to be passed. Use caution when the selector you&rsquo;re extending from has nested selectors though.</p>
+
+<h3>Mixins in Sass</h3>
+
+<p>The <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend">sass documentation</a>, has a good example that demonstrates mixins:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@mixin</span> <span class="nt">sexy-border</span><span class="o">(</span><span class="err">$</span><span class="nt">color</span><span class="o">,</span> <span class="err">$</span><span class="nt">width</span><span class="o">:</span> <span class="nt">1in</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">border</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">color</span><span class="o">:</span> <span class="err">$</span><span class="k">color</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">width</span><span class="o">:</span> <span class="err">$</span><span class="k">width</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">style</span><span class="o">:</span> <span class="k">dashed</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nt">p</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">sexy</span><span class="o">-</span><span class="k">border</span><span class="p">(</span><span class="nb">blue</span><span class="p">);</span> <span class="p">}</span>
+</span><span class='line'><span class="nt">h1</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">sexy</span><span class="o">-</span><span class="k">border</span><span class="p">(</span><span class="nb">blue</span><span class="o">,</span> <span class="m">2in</span><span class="p">);</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>is compiled to:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">p</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border-color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">1in</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border-style</span><span class="o">:</span> <span class="k">dashed</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">h1</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border-color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">2in</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border-style</span><span class="o">:</span> <span class="k">dashed</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Mixins also support keyword arguments, so you can explicitly name the parameters in the <code>@include</code> statement and include them out of order. Here&rsquo;s an example that works with the <code>sexy-border</code> mixin above:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">h1</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">sexy</span><span class="o">-</span><span class="k">border</span><span class="p">(</span><span class="err">$</span><span class="k">width</span><span class="o">:</span> <span class="m">1in</span><span class="o">,</span> <span class="err">$</span><span class="k">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">);</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Placeholder Selectors in Sass</h3>
+
+<p>Placeholder selectors can only be used with the <code>@extend</code> directive. If they&rsquo;re not referenced at all, they render no output in the compiled css.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">%</span><span class="nt">error</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="m">#f00</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="m">#fdd</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">%</span><span class="nt">not-used</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">//</span> <span class="n">these</span> <span class="n">styles</span> <span class="n">aren</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">rendered</span> <span class="n">anywhere</span>
+</span><span class='line'>  <span class="o">//</span> <span class="n">since</span> <span class="o">%</span><span class="n">not</span><span class="o">-</span><span class="n">used</span> <span class="n">is</span> <span class="n">not</span> <span class="n">extended</span> <span class="n">anywhere</span> <span class="n">in</span> <span class="n">this</span> <span class="n">file</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.seriousError</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">@</span><span class="n">extend</span> <span class="o">%</span><span class="n">error</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>is compiled to:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.seriousError</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="m">#f00</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="m">#fdd</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nc">.seriousError</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Watching a Sass File</h3>
 
+<p>Automatically recompiles scss into css:</p>
+
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">sass</span> <span class="o">--</span><span class="n">watch</span> <span class="n">style</span><span class="o">.</span><span class="n">scss</span><span class="ss">:style</span><span class="o">.</span><span class="n">css</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sass --watch style.scss:style.css
 </span></code></pre></td></tr></table></div></figure>
 
 
