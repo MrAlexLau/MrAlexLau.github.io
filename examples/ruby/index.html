@@ -12,8 +12,7 @@
   <meta name="description" content="Ruby Using !! Use !! to coerce nil into false: 1
 2
 false || nil =&gt; nil
-!!(false || nil) =&gt; false Array.select method See its documentation 1
-2 &hellip;">
+!!(false || nil) =&gt; false Array.compact method Remove nil records from &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,6 +92,15 @@ false || nil =&gt; nil
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="kp">false</span> <span class="o">||</span> <span class="kp">nil</span> <span class="o">=&gt;</span> <span class="kp">nil</span>
 </span><span class='line'><span class="o">!!</span><span class="p">(</span><span class="kp">false</span> <span class="o">||</span> <span class="kp">nil</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Array.compact method</h3>
+
+<p>Remove nil records from an array. See its <a href="http://www.ruby-doc.org/core-2.1.2/Array.html#method-i-compact">documentation</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">[</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="kp">nil</span> <span class="o">].</span><span class="n">compact</span> <span class="c1">#=&gt; [ &quot;a&quot;, &quot;b&quot;, &quot;c&quot; ]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -303,6 +311,19 @@ params inside the controller.
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Hash.slice method</h3>
+
+<p>Only keep the given keys in a hash (requires <a href="http://api.rubyonrails.org/classes/Hash.html#method-i-slice">active support</a>)):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;active_support&#39;</span>
+</span><span class='line'><span class="n">h</span> <span class="o">=</span> <span class="p">{</span><span class="ss">a</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="ss">b</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="ss">c</span><span class="p">:</span> <span class="mi">7</span><span class="p">}</span>
+</span><span class='line'><span class="n">h</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="ss">:a</span><span class="p">,</span> <span class="ss">:c</span><span class="p">)</span> <span class="c1">#=&gt; {:a=&gt;5, :c=&gt;7}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h3>Inject</h3>
 
 <p>See its <a href="http://ruby-doc.org/core-2.1.0/Enumerable.html#method-i-inject">documentation</a></p>
@@ -412,6 +433,8 @@ params inside the controller.
 
 <h3>Rspec</h3>
 
+<h4>Expectations</h4>
+
 <p>Expectations on arguments:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -422,6 +445,16 @@ params inside the controller.
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
+
+<h4>Let vs Let!</h4>
+
+<p>There&rsquo;s an example in the <a href="https://www.relishapp.com/rspec/rspec-core/v/2-11/docs/helper-methods/let-and-let">documentation</a>
+Use let to define a memoized helper method. The value will be cached
+across multiple calls in the same example but not across examples.</p>
+
+<p>Note that let is lazy-evaluated: it is not evaluated until the first time
+the method it defines is invoked. You can use let! to force the method&rsquo;s
+invocation before each example.</p>
 
 <h4>Setting focus options</h4>
 
