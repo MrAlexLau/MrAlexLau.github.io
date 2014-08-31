@@ -45,8 +45,39 @@ Note that the styles are comma separated, decreasing the amount of duplicate cod
 
 As a rule of thumb, you can use `@extend` instead of including a `@include a_mixin` when there are no arguments to be passed. Use caution when the selector you're extending from has nested selectors though.
 
+### Color Functions in Sass
+[This link](http://sass-lang.com/documentation/Sass/Script/Functions.html) has a list of all of them. Notably:
+
+**lighten($color, $amount)** - Makes a color lighter
+
+**darken($color, $amount)** - Makes a color darker
+
+**grayscale($color)** - Converts a color to grayscale
+
+**complement($color)** - Returns the complement of a color
+
+** invert($color)** -  Returns the inverse of a color
+
+### Each loops in Sass
+From the [sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend):
+```
+@each $animal in puma, sea-slug, egret, salamander {
+  .#{$animal}-icon {
+    background-image: url('/images/#{$animal}.png');
+  }
+}
+```
+
+### For loops in Sass
+From the [sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend):
+```
+@for $i from 1 through 3 {
+  .item-#{$i} { width: 2em * $i; }
+}
+```
+
 ### Mixins in Sass
-The [sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend), has a good example that demonstrates mixins:
+The [sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend) has a good example that demonstrates mixins:
 ``` css
 @mixin sexy-border($color, $width: 1in) {
   border: {
@@ -105,6 +136,16 @@ is compiled to:
 
 .seriousError {
   border-width: 3px;
+}
+```
+
+### While loop in Sass
+From the [sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend):
+``` css
+$i: 6;
+@while $i > 0 {
+  .item-#{$i} { width: 2em * $i; }
+  $i: $i - 2;
 }
 ```
 

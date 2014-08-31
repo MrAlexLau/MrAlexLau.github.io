@@ -14,6 +14,12 @@ false || nil => nil
 !!(false || nil) => false
 ```
 
+### Array.compact method
+Remove nil records from an array. See its [documentation](http://www.ruby-doc.org/core-2.1.2/Array.html#method-i-compact)
+``` ruby
+[ "a", nil, "b", nil, "c", nil ].compact #=> [ "a", "b", "c" ]
+```
+
 ### Array.select method
 See its [documentation](http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-select)
 ``` ruby
@@ -138,6 +144,15 @@ h.select {|k,v| v < 200}  #=> {"a" => 100}
 h.select {|k,v| v > 400}  #=> {}
 ```
 
+### Hash.slice method
+Only keep the given keys in a hash (requires [active support](http://api.rubyonrails.org/classes/Hash.html#method-i-slice))):
+
+``` ruby
+require 'active_support'
+h = {a: 5, b:6, c: 7}
+h.slice(:a, :c) #=> {:a=>5, :c=>7}
+```
+
 ### Inject
 See its [documentation](http://ruby-doc.org/core-2.1.0/Enumerable.html#method-i-inject)
 ``` ruby
@@ -200,12 +215,25 @@ SecureRandom.hex[0..5] # outputs a random hex string of length 5
 ```
 
 ### Rspec
+
+#### Expectations
 Expectations on arguments:
 ``` ruby
 expect(obj).to receive(:new).with do |arg1, arg2|
   expect(arg1).to eq(1)
 end
 ```
+
+#### Let vs Let!
+There's an example in the [documentation](https://www.relishapp.com/rspec/rspec-core/v/2-11/docs/helper-methods/let-and-let)
+Use let to define a memoized helper method. The value will be cached
+across multiple calls in the same example but not across examples.
+
+Note that let is lazy-evaluated: it is not evaluated until the first time
+the method it defines is invoked. You can use let! to force the method's
+invocation before each example.
+
+
 
 #### Setting focus options
 ``` ruby
