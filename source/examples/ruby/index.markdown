@@ -132,6 +132,22 @@ rescue Exception => e
 end
 ```
 
+### FactoryGirl
+#### Skipping model validations
+From this [SO post](http://stackoverflow.com/a/9322477/2339716):
+``` ruby
+let(:invalid_group) {
+  g = FactoryGirl.build(:group, :expiry => Time.now - 3.days)
+  g.save(:validate => false)
+  g
+}
+```
+
+### Find/Replace using Bracket Syntax
+str = 'this string is a curious string'
+str['string'] = 'replacement' #=> "replacement"
+str #=> "this replacement is a curious string"
+
 ### Formatting dates
 See http://apidock.com/ruby/DateTime/strftime
 
@@ -232,7 +248,6 @@ across multiple calls in the same example but not across examples.
 Note that let is lazy-evaluated: it is not evaluated until the first time
 the method it defines is invoked. You can use let! to force the method's
 invocation before each example.
-
 
 
 #### Setting focus options
