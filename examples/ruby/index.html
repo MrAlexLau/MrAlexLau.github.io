@@ -292,6 +292,31 @@ params inside the controller.
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h3>FactoryGirl</h3>
+
+<h4>Skipping model validations</h4>
+
+<p>From this <a href="http://stackoverflow.com/a/9322477/2339716">SO post</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">let</span><span class="p">(</span><span class="ss">:invalid_group</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">g</span> <span class="o">=</span> <span class="no">FactoryGirl</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="ss">:group</span><span class="p">,</span> <span class="ss">:expiry</span> <span class="o">=&gt;</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span> <span class="o">-</span> <span class="mi">3</span><span class="o">.</span><span class="n">days</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">g</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="ss">:validate</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">g</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Find/Replace using Bracket Syntax</h3>
+
+<p>str = &lsquo;this string is a curious string&rsquo;
+str[&lsquo;string&rsquo;] = &lsquo;replacement&rsquo; #=> &ldquo;replacement&rdquo;
+str #=> &ldquo;this replacement is a curious string&rdquo;</p>
+
 <h3>Formatting dates</h3>
 
 <p>See <a href="http://apidock.com/ruby/DateTime/strftime">http://apidock.com/ruby/DateTime/strftime</a></p>
