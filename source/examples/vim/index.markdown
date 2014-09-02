@@ -10,11 +10,28 @@ footer: true
 ### Change
 Command: `c`
 
+#### Examples:
+
+`ce` - delete the current word and enter insertion mode
+`c$` - delete until the end of the line and enter insertion mode
+
 Advanced example: From within a single quote, eg - *'in the middle of this'*
 
 `c` + `i` +`'`
 
 Which stands for Change, Inside, Single Quote
+
+### Delete Shortcuts
+From vimtutor:
+
+`dw` - delete until the start of the next word
+
+`de` - delete until the end of the current word
+
+`d$` - delete until the end of the current line
+
+### File Status
+`Ctrl + g` - See the current file and cursor position
 
 ### Find and Replace
 Find and replace globally in a file:
@@ -30,8 +47,41 @@ Add c to the end of the command to be prompted for a confirmation at each find/r
 :8,10 s/foo/bar/gc
 ```
 
+### Highlight Matching Parentheses
+While the cursor is ), ], }, press `%`
+
+### Jump to the Beginning/End of the File
+Jump to the beginning of the file: `gg`
+
+Jump to the beginning of the file: `G`
+
+### Jump to the Beginning of the Line
+Command: `0`
+
+### The Open Command
+Command: `O` - insert a new line above the current line where the cursor is
+
+Command: `o` - insert a new line below the current line where the cursor is
+
+### The Overwrite Command
+Command: `R` - enter overwrite mode
+
 ### Repeat the Last Command
 Command: `.`
+
+### Running External Commands
+Command: `!<external command>`
+
+Example: `!ls` - executes the file list command in the current directory
+
+### Searching
+Search: `/`
+
+Search for Previous Match: `?`
+
+Find next match: `n`
+
+Find next match, searching backwards: `N`
 
 ### Select the Entire Line
 Command: `V` (note that it's capitalized)
@@ -65,6 +115,11 @@ Advanced example: From within a single quote, eg - *'in the middle of this'*
 `v` + `i` +`'`
 
 Which stands for Visually Select, Inside, Single Quote
+
+### Write and Quit
+Command: `x`
+
+Shorthand for write and quit together (normally `wq`)
 
 ### Vimrc settings file
 `" comments lead off with a double quote`
