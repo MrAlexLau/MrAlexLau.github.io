@@ -9,7 +9,8 @@
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Vim Change Command: c Advanced example: From within a single quote, eg &ndash; &lsquo;in the middle of this&rsquo; c + i +' Which stands for Change &hellip;">
+  <meta name="description" content="Vim Change Command: c Examples: ce &ndash; delete the current word and enter insertion mode
+c$ &ndash; delete until the end of the line and enter &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,11 +86,30 @@
 
 <p>Command: <code>c</code></p>
 
+<h4>Examples:</h4>
+
+<p><code>ce</code> &ndash; delete the current word and enter insertion mode
+<code>c$</code> &ndash; delete until the end of the line and enter insertion mode</p>
+
 <p>Advanced example: From within a single quote, eg &ndash; <em>&lsquo;in the middle of this&rsquo;</em></p>
 
-<p><code>c</code> + <code>i</code> +<code>'</code></p>
+<p><code>ci'</code></p>
 
 <p>Which stands for Change, Inside, Single Quote</p>
+
+<h3>Delete Shortcuts</h3>
+
+<p>From vimtutor:</p>
+
+<p><code>dw</code> &ndash; delete until the start of the next word</p>
+
+<p><code>de</code> &ndash; delete until the end of the current word</p>
+
+<p><code>d$</code> &ndash; delete until the end of the current line</p>
+
+<h3>File Status</h3>
+
+<p><code>Ctrl + g</code> &ndash; See the current file and cursor position</p>
 
 <h3>Find and Replace</h3>
 
@@ -111,9 +131,49 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>:8,10 s/foo/bar/gc</span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Highlight Matching Parentheses</h3>
+
+<p>While the cursor is ), ], }, press <code>%</code></p>
+
+<h3>Jump to the Beginning/End of the File</h3>
+
+<p>Jump to the beginning of the file: <code>gg</code></p>
+
+<p>Jump to the beginning of the file: <code>G</code></p>
+
+<h3>Jump to the Beginning of the Line</h3>
+
+<p>Command: <code>0</code></p>
+
+<h3>The Open Command</h3>
+
+<p>Command: <code>O</code> &ndash; insert a new line above the current line where the cursor is</p>
+
+<p>Command: <code>o</code> &ndash; insert a new line below the current line where the cursor is</p>
+
+<h3>The Overwrite Command</h3>
+
+<p>Command: <code>R</code> &ndash; enter overwrite mode</p>
+
 <h3>Repeat the Last Command</h3>
 
 <p>Command: <code>.</code></p>
+
+<h3>Running External Commands</h3>
+
+<p>Command: <code>!&lt;external command&gt;</code></p>
+
+<p>Example: <code>!ls</code> &ndash; executes the file list command in the current directory</p>
+
+<h3>Searching</h3>
+
+<p>Search: <code>/</code></p>
+
+<p>Search for Previous Match: <code>?</code></p>
+
+<p>Find next match: <code>n</code></p>
+
+<p>Find next match, searching backwards: <code>N</code></p>
 
 <h3>Select the Entire Line</h3>
 
@@ -152,6 +212,12 @@
 <p><code>v</code> + <code>i</code> +<code>'</code></p>
 
 <p>Which stands for Visually Select, Inside, Single Quote</p>
+
+<h3>Write and Quit</h3>
+
+<p>Command: <code>x</code></p>
+
+<p>Shorthand for write and quit together (normally <code>wq</code>)</p>
 
 <h3>Vimrc settings file</h3>
 
