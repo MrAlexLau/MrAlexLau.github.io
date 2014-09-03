@@ -17,7 +17,7 @@ Command: `c`
 
 Advanced example: From within a single quote, eg - *'in the middle of this'*
 
-`c` + `i` +`'`
+`ci'`
 
 Which stands for Change, Inside, Single Quote
 
