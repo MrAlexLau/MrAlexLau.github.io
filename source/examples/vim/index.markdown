@@ -34,9 +34,14 @@ From vimtutor:
 `Ctrl + g` - See the current file and cursor position
 
 ### Find and Replace
-Find and replace globally in a file:
+Find and replace on all instances on the current line:
 ```
 :s/foo/bar/g
+```
+### Find and Replace
+Find and replace globally in a file:
+```
+:%s/foo/bar/g
 ```
 Find and replace between lines 8 and 10:
 ```
