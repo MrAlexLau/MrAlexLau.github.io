@@ -14,6 +14,9 @@ footer: true
 }
 ```
 
+### Centering
+See http://css-tricks.com/centering-css-complete-guide
+
 ### Extend in Sass
 Given the example from the [sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend), given this sass:
 ``` css

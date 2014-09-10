@@ -7,6 +7,12 @@ sharing: false
 footer: true
 ---
 
+## Jquery Add
+[[Documentation](http://api.jquery.com/add/)] Combine multiple selectors together into one big selection:
+```javascript
+$('div').add('p').css('background-color', 'green')
+```
+
 ## Counting Keys in an Object
 ``` javascript
 elms = { a: 1, b: 2, c: 3 }

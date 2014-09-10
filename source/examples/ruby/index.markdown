@@ -169,6 +169,41 @@ h = {a: 5, b:6, c: 7}
 h.slice(:a, :c) #=> {:a=>5, :c=>7}
 ```
 
+### Include vs Extend
+`include` is used to make a module's methods instance methods for a class
+
+`extend` is used to make a module's methods class methods for a class
+
+```ruby
+module Extendable
+  def a_class_method
+    "I'm a class method"
+  end
+end
+
+module Includable
+  def an_instance_method
+    "I'm an instance method"
+  end
+end
+
+class ClassWithExtend
+  extend Extendable
+end
+
+class ClassWithInclude
+  include Includable
+end
+
+ClassWithExtend.a_class_method #=> "I'm a class method"
+c1 = ClassWithExtend.new
+c1.a_class_method #=> NoMethodError: undefined method `a_class_method' for #<ClassWithExtend:0x007fa7f24cc740>
+
+c2 = ClassWithInclude.new
+c2.an_instance_method #=> "I'm an instance method"
+ClassWithInclude.an_instance_method #=> NoMethodError: undefined method `an_instance_method' for ClassWithInclude:Class
+```
+
 ### Inject
 See its [documentation](http://ruby-doc.org/core-2.1.0/Enumerable.html#method-i-inject)
 ``` ruby
@@ -230,6 +265,25 @@ require 'securerandom'
 SecureRandom.hex[0..5] # outputs a random hex string of length 5
 ```
 
+### Retry
+(from [tutorialspoint](http://www.tutorialspoint.com/ruby/ruby_loops.htm))
+If retry appears in rescue clause of begin expression, restart from the beginning of the 1begin body.
+``` ruby
+begin
+   do_something # exception raised
+rescue
+   # handles error
+   retry  # restart from beginning
+end
+```
+
+If retry appears in the iterator, the block, or the body of the for expression, restarts the invocation of the iterator call. Arguments to the iterator is re-evaluated.
+```ruby
+for i in 1..5
+   retry if some_condition # restart from i == 1
+end
+```
+
 ### Rspec
 
 #### Expectations
@@ -262,6 +316,26 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
 
   # ...
+end
+```
+
+#### Stub Chain
+``` ruby
+# stub_chain takes in a list of subobject names, and one method name
+# returns an object with each of those subobjects nested into each other
+# and mocks a method that returns nil for the last argument
+
+# eg - obj = stub_chain(%w{ account sms messages create })
+# returns an object that stubs this method call:
+# obj.account.sms.messages.create
+# and returns nil
+def stub_chain(method_chain)
+  return nil if method_chain.empty?
+
+  next_object_name = method_chain.shift
+  obj = Object.new
+  obj.stub(next_object_name.to_sym).and_return(stub_chain(method_chain))
+  obj
 end
 ```
 

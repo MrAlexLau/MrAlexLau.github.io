@@ -11,6 +11,7 @@ footer: true
 * [Hotkeys for Devtools](https://developer.chrome.com/devtools/docs/shortcuts)
 
 ## CSS
+* [Guide to Centering](http://css-tricks.com/centering-css-complete-guide)
 * [The Nth Selector](http://nthmaster.com/)
 
 ## Devops
