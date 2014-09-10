@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My 4 Stages of Version Control - Bits on Bits on Bits</title>
+  <title>launchctl "nothing found to load" - Bits on Bits on Bits</title>
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Version control &ndash; it&rsquo;s great. It&rsquo;s also amazing how you don&rsquo;t realize how much better it can be until you use a better tool. &hellip;">
+  <meta name="description" content="When you get the error &ldquo;nothing found to load&rdquo; after running launchctl load. Example: 1
+2
+&gt; launchctl load ~/Library/LaunchAgents/org. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control">
+  <link rel="canonical" href="http://bitsonbitsonbits.com/blog/launchctl-overrides">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Bits on Bits on Bits" type="application/atom+xml">
@@ -79,7 +81,7 @@
   
   <header>
     
-      <h1 class="entry-title">My 4 Stages of Version Control</h1>
+      <h1 class="entry-title">Launchctl "Nothing Found to Load"</h1>
     
     
       <p class="meta">
@@ -95,38 +97,52 @@
   
 
 
-<time datetime="2013-11-04T00:00:00-06:00" pubdate data-updated="true">Nov 4<span>th</span>, 2013</time>
+<time datetime="2014-09-09T22:15:00-05:00" pubdate data-updated="true">Sep 9<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Version control &ndash; it&rsquo;s great. It&rsquo;s also amazing how you don&rsquo;t realize how much better it <em>can</em> be until you use a better tool. Personally, I like to think I&rsquo;ve gone through 4 main &ldquo;stages&rdquo; of version control, each stage being a more useful and effective addition to my workflow than the previous.</p>
+<div class="entry-content"><p>When you get the error &ldquo;nothing found to load&rdquo; after running <code>launchctl load</code>. Example:</p>
 
-<h2>Stage 1 &ndash; Local Backups</h2>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt; launchctl load ~/Library/LaunchAgents/org.virtualbox.vboxwebsrv.plist                                                <span class="o">[</span>22:25:20<span class="o">]</span>
+</span><span class='line'>nothing found to load
+</span></code></pre></td></tr></table></div></figure>
 
-<p><em>&ldquo;Hmmmm, I&rsquo;m planning on making a lot of change to this code, better make a copy of the file <strong>hello.cpp</strong>. I&rsquo;ll call it <strong>hello2.cpp</strong>! I&rsquo;m a genius!&rdquo;</em></p>
 
-<p>Stage 1 is every n00b&rsquo;s favorite, just making another copy of the file. Something go horribly wrong while you were in that 4am coding frenzy? You&rsquo;ve always got that copy lying around, assuming you had the foresight to make it.</p>
+<p>First check to make sure the package isn&rsquo;t listed as disabled in:
+<code>/private/var/db/launchd.db/com.apple.launchd/overrides.plist</code></p>
 
-<h2>Stage 2 &ndash; Offsite Backups</h2>
+<p>If the package isn&rsquo;t listed in the overrides file, <a href="http://launchd.info/">launchd documentation</a> offers another file it may be located in.
+First get your user id by running <code>id</code> on the command line:</p>
 
-<p><em>&ldquo;Hey (insert programming partner&rsquo;s name here), we&rsquo;re going to need to share our code somehow! How about I work on it Friday night, then email you a zip file of my progress? Then you can work on it Saturday!&rdquo;</em></p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt; id -u
+</span><span class='line'>201
+</span></code></pre></td></tr></table></div></figure>
 
-<p>Stage 2 is only slightly better than stage 1. As least you (and your partner) have a copy of the code the next time you spill some hot chocolate on your laptop.</p>
 
-<h2>Stage 3 &ndash; Centralized Version Control</h2>
+<p>Now look in this file:
+/var/db/launchd.db/com.apple.launchd.peruser.<strong><em>201</em></strong>/overrides.plist. The override entry should be listed in this file.</p>
 
-<p><em>&ldquo;Wow, svn is really cool! You can make savepoints in your code?! Other people can get your code too, and contribute to it?!&rdquo;</em></p>
+<p>In the example given above for virtualbox, you would remove these lines from that overrides.plist file:</p>
 
-<p>Using an <strong>actual</strong> version control system for the first time is mindblowing in the omg-why-didn&rsquo;t-I-know-about-this-before kind of way. Once you realize how to commit and branch code, there&rsquo;s no turning back.</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;key&gt;org.virtualbox.vboxwebsvc&lt;/key&gt;
+</span><span class='line'>&lt;dict&gt;
+</span><span class='line'>  &lt;key&gt;Disabled&lt;/key&gt;
+</span><span class='line'>  &lt;<span class="nb">true</span>/&gt;
+</span><span class='line'>&lt;/dict&gt;
+</span></code></pre></td></tr></table></div></figure>
 
-<h2>Stage 4 &ndash; Distributed Version Control</h2>
-
-<p><em>&ldquo;I don&rsquo;t really get what the big deal is with git. I mean it&rsquo;s pretty much the same as &ndash; oh wait, oh wait no it&rsquo;s not. Ok. Yes. This is really cool. LET FREEDOM RING.&rdquo;</em></p>
-
-<p>Just when I was telling my friends how great svn is, git came along and changed everthing. Changes are stored extremely efficiently, making the act of pulling changes quick even when there are a lot of files modified. Branches with git are &ldquo;cheap&rdquo; in that they are easily mergeable with other branches. With git, life is good. With github, life is great. I&rsquo;ll go into that more in another post.</p>
 </div>
 
 
@@ -139,18 +155,12 @@
 
       
 
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/version-control/'>version-control</a>
-  
-</span>
-
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control/" data-via="" data-counturl="http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://bitsonbitsonbits.com/blog/launchctl-overrides/" data-via="" data-counturl="http://bitsonbitsonbits.com/blog/launchctl-overrides/" >Tweet</a>
   
   
   
@@ -159,10 +169,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/autostarting-homebrew-packages/" title="Previous Post: Autostarting Homebrew Packages">&laquo; Autostarting Homebrew Packages</a>
+        <a class="basic-alignment left" href="/blog/rubygems-versioning/" title="Previous Post: RubyGems Versioning">&laquo; RubyGems Versioning</a>
       
-      
-        <a class="basic-alignment right" href="/blog/gmail-snooze/" title="Next Post: Gmail Snooze">Gmail Snooze &raquo;</a>
       
     </p>
   </footer>
@@ -228,8 +236,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control/';
-        var disqus_url = 'http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control/';
+        var disqus_identifier = 'http://bitsonbitsonbits.com/blog/launchctl-overrides/';
+        var disqus_url = 'http://bitsonbitsonbits.com/blog/launchctl-overrides/';
         var disqus_script = 'embed.js';
       
     (function () {

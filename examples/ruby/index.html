@@ -349,6 +349,69 @@ str #=> &ldquo;this replacement is a curious string&rdquo;</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Include vs Extend</h3>
+
+<p><code>include</code> is used to make a module&rsquo;s methods instance methods for a class</p>
+
+<p><code>extend</code> is used to make a module&rsquo;s methods class methods for a class</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">Extendable</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">a_class_method</span>
+</span><span class='line'>    <span class="s2">&quot;I&#39;m a class method&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">module</span> <span class="nn">Includable</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">an_instance_method</span>
+</span><span class='line'>    <span class="s2">&quot;I&#39;m an instance method&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">ClassWithExtend</span>
+</span><span class='line'>  <span class="kp">extend</span> <span class="no">Extendable</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">ClassWithInclude</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">Includable</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">ClassWithExtend</span><span class="o">.</span><span class="n">a_class_method</span> <span class="c1">#=&gt; &quot;I&#39;m a class method&quot;</span>
+</span><span class='line'><span class="n">c1</span> <span class="o">=</span> <span class="no">ClassWithExtend</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">c1</span><span class="o">.</span><span class="n">a_class_method</span> <span class="c1">#=&gt; NoMethodError: undefined method `a_class_method&#39; for #&lt;ClassWithExtend:0x007fa7f24cc740&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">c2</span> <span class="o">=</span> <span class="no">ClassWithInclude</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">c2</span><span class="o">.</span><span class="n">an_instance_method</span> <span class="c1">#=&gt; &quot;I&#39;m an instance method&quot;</span>
+</span><span class='line'><span class="no">ClassWithInclude</span><span class="o">.</span><span class="n">an_instance_method</span> <span class="c1">#=&gt; NoMethodError: undefined method `an_instance_method&#39; for ClassWithInclude:Class</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h3>Inject</h3>
 
 <p>See its <a href="http://ruby-doc.org/core-2.1.0/Enumerable.html#method-i-inject">documentation</a></p>
@@ -456,6 +519,37 @@ str #=> &ldquo;this replacement is a curious string&rdquo;</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Retry</h3>
+
+<p>(from <a href="http://www.tutorialspoint.com/ruby/ruby_loops.htm">tutorialspoint</a>)
+If retry appears in rescue clause of begin expression, restart from the beginning of the 1begin body.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">begin</span>
+</span><span class='line'>   <span class="n">do_something</span> <span class="c1"># exception raised</span>
+</span><span class='line'><span class="k">rescue</span>
+</span><span class='line'>   <span class="c1"># handles error</span>
+</span><span class='line'>   <span class="k">retry</span>  <span class="c1"># restart from beginning</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If retry appears in the iterator, the block, or the body of the for expression, restarts the invocation of the iterator call. Arguments to the iterator is re-evaluated.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span>
+</span><span class='line'>   <span class="k">retry</span> <span class="k">if</span> <span class="n">some_condition</span> <span class="c1"># restart from i == 1</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h3>Rspec</h3>
 
 <h4>Expectations</h4>
@@ -504,6 +598,43 @@ invocation before each example.</p>
 </span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">run_all_when_everything_filtered</span> <span class="o">=</span> <span class="kp">true</span>
 </span><span class='line'>
 </span><span class='line'>  <span class="c1"># ...</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Stub Chain</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># stub_chain takes in a list of subobject names, and one method name</span>
+</span><span class='line'><span class="c1"># returns an object with each of those subobjects nested into each other</span>
+</span><span class='line'><span class="c1"># and mocks a method that returns nil for the last argument</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># eg - obj = stub_chain(%w{ account sms messages create })</span>
+</span><span class='line'><span class="c1"># returns an object that stubs this method call:</span>
+</span><span class='line'><span class="c1"># obj.account.sms.messages.create</span>
+</span><span class='line'><span class="c1"># and returns nil</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">stub_chain</span><span class="p">(</span><span class="n">method_chain</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">return</span> <span class="kp">nil</span> <span class="k">if</span> <span class="n">method_chain</span><span class="o">.</span><span class="n">empty?</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">next_object_name</span> <span class="o">=</span> <span class="n">method_chain</span><span class="o">.</span><span class="n">shift</span>
+</span><span class='line'>  <span class="n">obj</span> <span class="o">=</span> <span class="no">Object</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'>  <span class="n">obj</span><span class="o">.</span><span class="n">stub</span><span class="p">(</span><span class="n">next_object_name</span><span class="o">.</span><span class="n">to_sym</span><span class="p">)</span><span class="o">.</span><span class="n">and_return</span><span class="p">(</span><span class="n">stub_chain</span><span class="p">(</span><span class="n">method_chain</span><span class="p">))</span>
+</span><span class='line'>  <span class="n">obj</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -577,6 +708,10 @@ invocation before each example.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/launchctl-overrides/">Launchctl "Nothing Found to Load"</a>
+      </li>
     
       <li class="post">
         <a href="/blog/rubygems-versioning/">RubyGems Versioning</a>
