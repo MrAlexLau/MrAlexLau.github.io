@@ -7,11 +7,11 @@ categories:
 ---
 When you get the error "nothing found to load" after running `launchctl load`. Example:
 ``` bash
-> launchctl load ~/Library/LaunchAgents/org.virtualbox.vboxwebsrv.plist                                                [22:25:20]
+> launchctl load ~/Library/LaunchAgents/org.virtualbox.vboxwebsrv.plist
 nothing found to load
 ```
 
-First check to make sure the package isn't listed as disabled in:
+First check to make sure the package isn't listed as disabled in the global overrides file:
 `/private/var/db/launchd.db/com.apple.launchd/overrides.plist`
 
 If the package isn't listed in the overrides file, [launchd documentation](http://launchd.info/) offers another file it may be located in.

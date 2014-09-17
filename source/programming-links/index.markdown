@@ -15,6 +15,7 @@ footer: true
 * [The Nth Selector](http://nthmaster.com/)
 
 ## Devops
+* [CodeRanger blog](https://coderanger.net/system-monitoring/)
 * [Obtaining an SSL Certificate](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-with-a-free-signed-ssl-certificate-on-a-vps)
 
 ## Git
@@ -35,7 +36,7 @@ footer: true
 * [Tap](http://www.seejohncode.com/2012/01/02/ruby-tap-that/)
 
 ## Ruby on Rails
-#### Testing
+* [Active Support Documentation](http://guides.rubyonrails.org/active_support_core_extensions.html) - the official rails guide to activesupport helpers
 * [Better Errors](https://github.com/charliesome/better_errors) - an amazing gem that lets you run a REPL from the rails error page
 * [Better Specs](http://betterspecs.org/) - do's and do not's for writing specs
 * [Braise](https://github.com/MrAlexLau/braise) - my gem that lets you raise errors in less keystrokes with colored output

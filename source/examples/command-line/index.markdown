@@ -7,6 +7,13 @@ sharing: false
 footer: true
 ---
 
+### PbCopy
+Use this command to copy terminal text to your OS's copy buffer. Examples:
+```
+echo 'cool' | pbcopy
+cat temp.txt | pbcopy
+```
+
 ### Tailing
 Only show the first 10 lines when you find POST
 ```
