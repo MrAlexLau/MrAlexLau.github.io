@@ -24,6 +24,8 @@ Which stands for Change, Inside, Single Quote
 ### Delete Shortcuts
 From vimtutor:
 
+`daw` - "delete at word" - deletes the current word regardless of the cursor position
+
 `dw` - delete until the start of the next word
 
 `de` - delete until the end of the current word
