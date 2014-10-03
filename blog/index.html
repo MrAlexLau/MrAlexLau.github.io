@@ -9,9 +9,7 @@
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="When you get the error &ldquo;nothing found to load&rdquo; after running launchctl load. Example: 1
-2
-&gt; launchctl load ~/Library/LaunchAgents/org. &hellip;">
+  <meta name="description" content="You can use style injection when developing sinatra apps, allowing you to see css/sass changes without refreshing your browser. This is especially &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +76,58 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/autoloading-sass-in-sinatra/">Autoloading Sass in Sinatra</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-02T22:40:00-05:00" pubdate data-updated="true">Oct 2<span>nd</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>You can use <a href="http://css-tricks.com/style-injection-is-for-winners/">style injection</a> when developing sinatra apps, allowing you to see css/sass changes <em>without</em> refreshing your browser.</p>
+
+<p>This is especially helpful when doing responsive design, since you can have  different sized browser windows open at the same time and see how each changes affects a particular viewport.</p>
+
+<h3>Getting Set Up</h3>
+
+<ol>
+<li>Clone and bundle <a href="https://github.com/MrAlexLau/sinatra_autoload_sass_demo">a preconfigured sample application</a> that I created</li>
+<li>Install the appropriate livereload <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-">browser extension</a> &ndash; there&rsquo;s one for Chrome, Firefox, and Safari</li>
+<li>From the public/css directory, run <code>sass --watch style.scss:style.css</code> (this command could change as more sass files are added to the project)</li>
+<li>From the project root directory, run <code>guard</code></li>
+<li>From the project root directory, run <code>rackup</code></li>
+<li>You&rsquo;re done! Now anytime you save a change <code>style.scss</code>, the <code>style.css</code> file gets updated and your browser will show its changes without reloading the page.</li>
+</ol>
+
+
+<p>There&rsquo;s a more detailed version of this writeup on the project <a href="https://github.com/MrAlexLau/sinatra_autoload_sass_demo/blob/master/README.md">readme</a>. Special thanks to Matt Brictson&rsquo;s <a href="http://blog.55minutes.com/2013/01/lightning-fast-sass-reloading-in-rails-32/">excellent blog post</a>, without which this tip would not be possible.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -358,6 +408,10 @@ Or, if you don't want/need launchctl, you can just run:
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/autoloading-sass-in-sinatra/">Autoloading Sass in Sinatra</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/launchctl-overrides/">Launchctl &#8220;Nothing Found to Load&#8221;</a>
       </li>
     
@@ -371,10 +425,6 @@ Or, if you don't want/need launchctl, you can just run:
     
       <li class="post">
         <a href="/blog/my-4-stages-of-version-control/">My 4 Stages of Version Control</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/autostarting-homebrew-packages/">Autostarting Homebrew Packages</a>
       </li>
     
   </ul>
