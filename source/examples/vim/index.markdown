@@ -7,6 +7,9 @@ sharing: false
 footer: true
 ---
 
+### Centering the Current Line
+`zz` - vertically centers the current line on the screen
+
 ### Change
 Command: `c`
 

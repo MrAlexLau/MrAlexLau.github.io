@@ -64,5 +64,6 @@ footer: true
 * [CtrlP](https://github.com/kien/ctrlp.vim) - fuzzy file search
 * [Janus](https://github.com/carlhuda/janus) - a distribution of plugins for VIM (including both CtrlP and NERDTree)
 * [NERDTree](https://github.com/scrooloose/nerdtree) - file explorer
+* [NERDTree Guide](http://usevim.com/2012/07/18/nerdtree/) - handy guide for using NERDTree
 * [Pathogen](https://github.com/tpope/vim-pathogen) - plugin installer
 * [Tips for Vim Splits](http://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally)
