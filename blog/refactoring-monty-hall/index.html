@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Bits on Bits on Bits</title>
+  <title>Revisiting an Old Ruby Program - Bits on Bits on Bits</title>
   <meta name="author" content="Alex Lau">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://bitsonbitsonbits.com/blog">
+  <link rel="canonical" href="http://bitsonbitsonbits.com/blog/refactoring-monty-hall">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Bits on Bits on Bits" type="application/atom+xml">
@@ -74,15 +74,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/refactoring-monty-hall/">Revisiting an Old Ruby Program</a></h1>
+      <h1 class="entry-title">Revisiting an Old Ruby Program</h1>
     
     
       <p class="meta">
@@ -105,7 +102,7 @@
   </header>
 
 
-  <div class="entry-content"><p>As an exercise in coding, I recently rewrote an <a href="https://github.com/MrAlexLau/monty_hall/blob/original_program/montyHall.rb">old ruby program</a> into <a href="https://github.com/MrAlexLau/monty_hall">a new one</a>. Functionally the code for the new program does the exact same thing as the old one &ndash; both programs run simulations for the <a href="http://en.wikipedia.org/wiki/Monty_Hall_problem">Monty Hall Problem</a>. But the new one was written with the intention of being easier to read and DRY&#8217;er.</p>
+<div class="entry-content"><p>As an exercise in coding, I recently rewrote an <a href="https://github.com/MrAlexLau/monty_hall/blob/original_program/montyHall.rb">old ruby program</a> into <a href="https://github.com/MrAlexLau/monty_hall">a new one</a>. Functionally the code for the new program does the exact same thing as the old one &ndash; both programs run simulations for the <a href="http://en.wikipedia.org/wiki/Monty_Hall_problem">Monty Hall Problem</a>. But the new one was written with the intention of being easier to read and DRY&#8217;er.</p>
 
 <p>The original program was from when I was first learning ruby, and was definitely painful to read at times. Going straight down the program, here&rsquo;s a self-critique of some of the code.</p>
 
@@ -222,336 +219,46 @@
 
 <p>I was hesitant to even look at my original program because I knew that there would be lots of cringe-worthy moments to be had. But it&rsquo;s satisfying to be able to quickly identify elegant solutions to problems that used to give me a hassle &ndash; I&rsquo;d recommend it as an exercise to anyone.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/autoloading-sass-in-sinatra/">Autoloading Sass in Sinatra</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Alex Lau</span></span>
 
-<time datetime="2014-10-02T22:40:00-05:00" pubdate data-updated="true">Oct 2<span>nd</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>You can use <a href="http://css-tricks.com/style-injection-is-for-winners/">style injection</a> when developing sinatra apps, allowing you to see css/sass changes <em>without</em> refreshing your browser.</p>
-
-<p>This is especially helpful when doing responsive design, since you can have  different sized browser windows open at the same time and see how each changes affects a particular viewport.</p>
-
-<h3>Getting Set Up</h3>
-
-<ol>
-<li>Clone and bundle <a href="https://github.com/MrAlexLau/sinatra_autoload_sass_demo">a preconfigured sample application</a> that I created</li>
-<li>Install the appropriate livereload <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-">browser extension</a> &ndash; there&rsquo;s one for Chrome, Firefox, and Safari</li>
-<li>From the public/css directory, run <code>sass --watch style.scss:style.css</code> (this command could change as more sass files are added to the project)</li>
-<li>From the project root directory, run <code>guard</code></li>
-<li>From the project root directory, run <code>rackup</code></li>
-<li>You&rsquo;re done! Now anytime you save a change <code>style.scss</code>, the <code>style.css</code> file gets updated and your browser will show its changes without reloading the page.</li>
-</ol>
-
-
-<p>There&rsquo;s a more detailed version of this writeup on the project <a href="https://github.com/MrAlexLau/sinatra_autoload_sass_demo/blob/master/README.md">readme</a>. Special thanks to Matt Brictson&rsquo;s <a href="http://blog.55minutes.com/2013/01/lightning-fast-sass-reloading-in-rails-32/">excellent blog post</a>, without which this tip would not be possible.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/launchctl-overrides/">Launchctl &#8220;Nothing Found to Load&#8221;</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
+      <div class="sharing">
   
-
-
-<time datetime="2014-09-09T22:15:00-05:00" pubdate data-updated="true">Sep 9<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>When you get the error &ldquo;nothing found to load&rdquo; after running <code>launchctl load</code>. Example:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt; launchctl load ~/Library/LaunchAgents/org.virtualbox.vboxwebsrv.plist
-</span><span class='line'>nothing found to load
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>First check to make sure the package isn&rsquo;t listed as disabled in the global overrides file:
-<code>/private/var/db/launchd.db/com.apple.launchd/overrides.plist</code></p>
-
-<p>If the package isn&rsquo;t listed in the overrides file, <a href="http://launchd.info/">launchd documentation</a> offers another file it may be located in.
-First get your user id by running <code>id</code> on the command line:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>&gt; id -u
-</span><span class='line'>201
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now look in this file:
-/var/db/launchd.db/com.apple.launchd.peruser.<strong><em>201</em></strong>/overrides.plist. The override entry should be listed in this file.</p>
-
-<p>In the example given above for virtualbox, you would remove these lines from that overrides.plist file:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>&lt;key&gt;org.virtualbox.vboxwebsvc&lt;/key&gt;
-</span><span class='line'>&lt;dict&gt;
-</span><span class='line'>  &lt;key&gt;Disabled&lt;/key&gt;
-</span><span class='line'>  &lt;<span class="nb">true</span>/&gt;
-</span><span class='line'>&lt;/dict&gt;
-</span></code></pre></td></tr></table></div></figure>
-
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://bitsonbitsonbits.com/blog/refactoring-monty-hall/" data-via="" data-counturl="http://bitsonbitsonbits.com/blog/refactoring-monty-hall/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/rubygems-versioning/">RubyGems Versioning</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-18T20:17:00-05:00" pubdate data-updated="true">Mar 18<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>From the <a href="http://guides.rubygems.org/patterns/#semantic_versioning">RubyGems guide</a>:</p>
-
-<blockquote><p><strong>PATCH</strong> 0.0.x level changes for implementation level detail changes, such as small bug fixes</p>
-
-<p><strong>MINOR</strong> 0.x.0 level changes for any backwards compatible API changes, such as new functionality/features</p>
-
-<p><strong>MAJOR</strong> x.0.0 level changes for backwards incompatible API changes, such as changes that will break existing users code if they update</p></blockquote>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+        <a class="basic-alignment left" href="/blog/autoloading-sass-in-sinatra/" title="Previous Post: Autoloading Sass in Sinatra">&laquo; Autoloading Sass in Sinatra</a>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/gmail-snooze/">Gmail Snooze</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-17T00:00:00-05:00" pubdate data-updated="true">Mar 17<span>th</span>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;m a huge fan of the app <a href="http://www.mailboxapp.com/">Mailbox</a> for IOS. In my opinion, its killer feature is the ability to &lsquo;snooze&rsquo; emails, so that they are hidden for the time being, but reappear when they are relevant again.</p>
-
-<p>I wanted to have the same functionality through the Gmail web interface, and while googling I stumbled upon a Gmail <a href="http://gmailblog.blogspot.com/2011/07/gmail-snooze-with-apps-script.html">blog post that explains just how to do that</a>. It turns out that this has actually been available for quite some time (since 2011).</p>
-
-<p>What surprised me even more is that you can write custom javascript scripts to process your email, and that these scripts can be executed on a recurring basis.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/my-4-stages-of-version-control/">My 4 Stages of Version Control</a></h1>
-    
-    
-      <p class="meta">
-        
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-04T00:00:00-06:00" pubdate data-updated="true">Nov 4<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Version control &ndash; it&rsquo;s great. It&rsquo;s also amazing how you don&rsquo;t realize how much better it <em>can</em> be until you use a better tool. Personally, I like to think I&rsquo;ve gone through 4 main &ldquo;stages&rdquo; of version control, each stage being a more useful and effective addition to my workflow than the previous.</p>
-
-<h2>Stage 1 &ndash; Local Backups</h2>
-
-<p><em>&ldquo;Hmmmm, I&rsquo;m planning on making a lot of change to this code, better make a copy of the file <strong>hello.cpp</strong>. I&rsquo;ll call it <strong>hello2.cpp</strong>! I&rsquo;m a genius!&rdquo;</em></p>
-
-<p>Stage 1 is every n00b&rsquo;s favorite, just making another copy of the file. Something go horribly wrong while you were in that 4am coding frenzy? You&rsquo;ve always got that copy lying around, assuming you had the foresight to make it.</p>
-
-<h2>Stage 2 &ndash; Offsite Backups</h2>
-
-<p><em>&ldquo;Hey (insert programming partner&rsquo;s name here), we&rsquo;re going to need to share our code somehow! How about I work on it Friday night, then email you a zip file of my progress? Then you can work on it Saturday!&rdquo;</em></p>
-
-<p>Stage 2 is only slightly better than stage 1. As least you (and your partner) have a copy of the code the next time you spill some hot chocolate on your laptop.</p>
-
-<h2>Stage 3 &ndash; Centralized Version Control</h2>
-
-<p><em>&ldquo;Wow, svn is really cool! You can make savepoints in your code?! Other people can get your code too, and contribute to it?!&rdquo;</em></p>
-
-<p>Using an <strong>actual</strong> version control system for the first time is mindblowing in the omg-why-didn&rsquo;t-I-know-about-this-before kind of way. Once you realize how to commit and branch code, there&rsquo;s no turning back.</p>
-
-<h2>Stage 4 &ndash; Distributed Version Control</h2>
-
-<p><em>&ldquo;I don&rsquo;t really get what the big deal is with git. I mean it&rsquo;s pretty much the same as &ndash; oh wait, oh wait no it&rsquo;s not. Ok. Yes. This is really cool. LET FREEDOM RING.&rdquo;</em></p>
-
-<p>Just when I was telling my friends how great svn is, git came along and changed everthing. Changes are stored extremely efficiently, making the act of pulling changes quick even when there are a lot of files modified. Branches with git are &ldquo;cheap&rdquo; in that they are easily mergeable with other branches. With git, life is good. With github, life is great. I&rsquo;ll go into that more in another post.</p>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  
-  
+  </section>
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/autostarting-homebrew-packages/">Autostarting Homebrew Packages</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-10-27T19:48:00-05:00" pubdate data-updated="true">Oct 27<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://brew.sh">Homebrew</a> has made my life a lot easier when setting up new mac development environments. To install a new package is as easy as typing <code>brew install mysql</code> on the command line. (Other programs I commonly install with Homebrew are git, mongodb, and postgresql.)</p>
-
-<p>Sometimes you want a program to start a daemon (background) process when you log in. For example, I can start mongodb&rsquo;s daemon with the <code>mongod</code> command, but it&rsquo;d be nicer if it just started automatically.</p>
-
-<p>Fortunately Homebrew has a way to do this! Simply type <code>brew info mongo</code>. If mongod isn&rsquo;t set up to run automatically, the last bit of output will look like this:</p>
-
-<pre><code>To have launchd start mongodb at login:
-    ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
-Then to load mongodb now:
-    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
-Or, if you don't want/need launchctl, you can just run:
-    mongod
-</code></pre>
-
-<p>Note how you not only see how to start mongodb upon login, but also it shows you the name of mongo&rsquo;s daemon process, mongod.</p>
 </div>
-  
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -567,7 +274,7 @@ Or, if you don't want/need launchctl, you can just run:
       </li>
     
       <li class="post">
-        <a href="/blog/launchctl-overrides/">Launchctl &#8220;Nothing Found to Load&#8221;</a>
+        <a href="/blog/launchctl-overrides/">Launchctl "Nothing Found to Load"</a>
       </li>
     
       <li class="post">
@@ -588,6 +295,7 @@ Or, if you don't want/need launchctl, you can just run:
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -602,7 +310,10 @@ Or, if you don't want/need launchctl, you can just run:
       var disqus_shortname = 'bitsonbitsonbits';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://bitsonbitsonbits.com/blog/refactoring-monty-hall/';
+        var disqus_url = 'http://bitsonbitsonbits.com/blog/refactoring-monty-hall/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
