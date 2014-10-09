@@ -158,6 +158,34 @@
 
 <p>Command: <code>0</code></p>
 
+<h3>Registers</h3>
+
+<p>Use registers to store multiple values that you can copy and paste. From <a href="http://stackoverflow.com/a/1498026/2339716">this excellent stackoverflow answer</a>:</p>
+
+<blockquote><p>Registers in Vim let you run actions or commands on text stored within them. To access a register, you type &ldquo;a before a command, where a is the name of a register. If you want to copy the current line into register k, you can type</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"kyy</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>Or you can append to a register by using a capital letter</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"Kyy</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>You can then move through the document and paste it elsewhere using</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"kp</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>To access all currently defined registers type</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>:reg</span></code></pre></td></tr></table></div></figure>
+
+
 <h3>The Open Command</h3>
 
 <p>Command: <code>O</code> &ndash; insert a new line above the current line where the cursor is</p>
