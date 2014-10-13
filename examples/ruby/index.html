@@ -104,6 +104,19 @@ false || nil =&gt; nil
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Array.sample method</h3>
+
+<p>Use array.sample to pick a random element from an array:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="o">].</span><span class="n">sample</span> <span class="c1">#=&gt; 2</span>
+</span><span class='line'><span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="o">].</span><span class="n">sample</span> <span class="c1">#=&gt; 4</span>
+</span><span class='line'><span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="o">].</span><span class="n">sample</span> <span class="c1">#=&gt; 4</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h3>Array.select method</h3>
 
 <p>See its <a href="http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-select">documentation</a></p>
@@ -516,6 +529,15 @@ str #=> &ldquo;this replacement is a curious string&rdquo;</p>
 </span><span class='line'>
 </span><span class='line'><span class="nb">require</span> <span class="s1">&#39;securerandom&#39;</span>
 </span><span class='line'><span class="no">SecureRandom</span><span class="o">.</span><span class="n">hex</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="o">]</span> <span class="c1"># outputs a random hex string of length 5</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Range to Array</h3>
+
+<p>Convert a range to an array:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span> <span class="c1">#=&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 

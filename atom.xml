@@ -4,7 +4,7 @@
   <title><![CDATA[Bits on Bits on Bits]]></title>
   <link href="http://bitsonbitsonbits.com/atom.xml" rel="self"/>
   <link href="http://bitsonbitsonbits.com/"/>
-  <updated>2014-10-09T10:14:08-05:00</updated>
+  <updated>2014-10-13T16:58:20-04:00</updated>
   <id>http://bitsonbitsonbits.com/</id>
   <author>
     <name><![CDATA[Alex Lau]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Revisiting an Old Ruby Program]]></title>
     <link href="http://bitsonbitsonbits.com/blog/refactoring-monty-hall/"/>
-    <updated>2014-10-06T19:49:00-05:00</updated>
+    <updated>2014-10-06T19:49:00-04:00</updated>
     <id>http://bitsonbitsonbits.com/blog/refactoring-monty-hall</id>
     <content type="html"><![CDATA[<p>As an exercise in coding, I recently rewrote an <a href="https://github.com/MrAlexLau/monty_hall/blob/original_program/montyHall.rb">old ruby program</a> into <a href="https://github.com/MrAlexLau/monty_hall">a new one</a>. Functionally the code for the new program does the exact same thing as the old one &ndash; both programs run simulations for the <a href="http://en.wikipedia.org/wiki/Monty_Hall_problem">Monty Hall Problem</a>. But the new one was written with the intention of being easier to read and DRY&#8217;er.</p>
 
@@ -140,7 +140,7 @@
   <entry>
     <title type="html"><![CDATA[Autoloading Sass in Sinatra]]></title>
     <link href="http://bitsonbitsonbits.com/blog/autoloading-sass-in-sinatra/"/>
-    <updated>2014-10-02T22:40:00-05:00</updated>
+    <updated>2014-10-02T22:40:00-04:00</updated>
     <id>http://bitsonbitsonbits.com/blog/autoloading-sass-in-sinatra</id>
     <content type="html"><![CDATA[<p>You can use <a href="http://css-tricks.com/style-injection-is-for-winners/">style injection</a> when developing sinatra apps, allowing you to see css/sass changes <em>without</em> refreshing your browser.</p>
 
@@ -165,7 +165,7 @@
   <entry>
     <title type="html"><![CDATA[launchctl "nothing found to load"]]></title>
     <link href="http://bitsonbitsonbits.com/blog/launchctl-overrides/"/>
-    <updated>2014-09-09T22:15:00-05:00</updated>
+    <updated>2014-09-09T22:15:00-04:00</updated>
     <id>http://bitsonbitsonbits.com/blog/launchctl-overrides</id>
     <content type="html"><![CDATA[<p>When you get the error &ldquo;nothing found to load&rdquo; after running <code>launchctl load</code>. Example:</p>
 
@@ -212,7 +212,7 @@ First get your user id by running <code>id</code> on the command line:</p>
   <entry>
     <title type="html"><![CDATA[RubyGems Versioning]]></title>
     <link href="http://bitsonbitsonbits.com/blog/rubygems-versioning/"/>
-    <updated>2014-03-18T20:17:00-05:00</updated>
+    <updated>2014-03-18T20:17:00-04:00</updated>
     <id>http://bitsonbitsonbits.com/blog/rubygems-versioning</id>
     <content type="html"><![CDATA[<p>From the <a href="http://guides.rubygems.org/patterns/#semantic_versioning">RubyGems guide</a>:</p>
 
@@ -227,7 +227,7 @@ First get your user id by running <code>id</code> on the command line:</p>
   <entry>
     <title type="html"><![CDATA[Gmail Snooze]]></title>
     <link href="http://bitsonbitsonbits.com/blog/gmail-snooze/"/>
-    <updated>2014-03-17T00:00:00-05:00</updated>
+    <updated>2014-03-17T00:00:00-04:00</updated>
     <id>http://bitsonbitsonbits.com/blog/gmail-snooze</id>
     <content type="html"><![CDATA[<p>I&rsquo;m a huge fan of the app <a href="http://www.mailboxapp.com/">Mailbox</a> for IOS. In my opinion, its killer feature is the ability to &lsquo;snooze&rsquo; emails, so that they are hidden for the time being, but reappear when they are relevant again.</p>
 
@@ -240,7 +240,7 @@ First get your user id by running <code>id</code> on the command line:</p>
   <entry>
     <title type="html"><![CDATA[My 4 Stages of Version Control]]></title>
     <link href="http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control/"/>
-    <updated>2013-11-04T00:00:00-06:00</updated>
+    <updated>2013-11-04T00:00:00-05:00</updated>
     <id>http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control</id>
     <content type="html"><![CDATA[<p>Version control &ndash; it&rsquo;s great. It&rsquo;s also amazing how you don&rsquo;t realize how much better it <em>can</em> be until you use a better tool. Personally, I like to think I&rsquo;ve gone through 4 main &ldquo;stages&rdquo; of version control, each stage being a more useful and effective addition to my workflow than the previous.</p>
 
@@ -273,7 +273,7 @@ First get your user id by running <code>id</code> on the command line:</p>
   <entry>
     <title type="html"><![CDATA[Autostarting Homebrew Packages]]></title>
     <link href="http://bitsonbitsonbits.com/blog/autostarting-homebrew-packages/"/>
-    <updated>2013-10-27T19:48:00-05:00</updated>
+    <updated>2013-10-27T19:48:00-04:00</updated>
     <id>http://bitsonbitsonbits.com/blog/autostarting-homebrew-packages</id>
     <content type="html"><![CDATA[<p><a href="http://brew.sh">Homebrew</a> has made my life a lot easier when setting up new mac development environments. To install a new package is as easy as typing <code>brew install mysql</code> on the command line. (Other programs I commonly install with Homebrew are git, mongodb, and postgresql.)</p>
 
