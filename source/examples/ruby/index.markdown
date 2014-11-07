@@ -20,6 +20,14 @@ Remove nil records from an array. See its [documentation](http://www.ruby-doc.or
 [ "a", nil, "b", nil, "c", nil ].compact #=> [ "a", "b", "c" ]
 ```
 
+### Array.sample method
+Use array.sample to pick a random element from an array:
+``` ruby
+[1, 4, 2].sample #=> 2
+[1, 4, 2].sample #=> 4
+[1, 4, 2].sample #=> 4
+```
+
 ### Array.select method
 See its [documentation](http://www.ruby-doc.org/core-2.1.1/Array.html#method-i-select)
 ``` ruby
@@ -263,6 +271,12 @@ rand(1..3) # a random integer between one and three
 
 require 'securerandom'
 SecureRandom.hex[0..5] # outputs a random hex string of length 5
+```
+
+### Range to Array
+Convert a range to an array:
+``` ruby
+(1..10).to_a #=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
 ### Retry

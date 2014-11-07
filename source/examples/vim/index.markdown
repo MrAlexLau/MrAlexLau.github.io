@@ -40,22 +40,27 @@ From vimtutor:
 
 ### Find and Replace
 Find and replace on all instances on the current line:
-```
+`
 :s/foo/bar/g
-```
+`
 ### Find and Replace
 Find and replace globally in a file:
-```
+
+`
 :%s/foo/bar/g
-```
+`
+
 Find and replace between lines 8 and 10:
-```
+
+`
 :8,10 s/foo/bar/g
-```
+`
+
 Add c to the end of the command to be prompted for a confirmation at each find/replace:
-```
+
+`
 :8,10 s/foo/bar/gc
-```
+`
 
 ### Highlight Matching Parentheses
 While the cursor is ), ], }, press `%`
@@ -73,28 +78,29 @@ Use registers to store multiple values that you can copy and paste. From [this e
 
 
 > Registers in Vim let you run actions or commands on text stored within them. To access a register, you type "a before a command, where a is the name of a register. If you want to copy the current line into register k, you can type
-```
+
+`
 "kyy
-```
+`
 
 > Or you can append to a register by using a capital letter
 
-```
+`
 "Kyy
-```
+`
 
 
 > You can then move through the document and paste it elsewhere using
 
-```
+`
 "kp
-```
+`
 
 > To access all currently defined registers type
 
-```
+`
 :reg
-```
+`
 
 ### The Open Command
 Command: `O` - insert a new line above the current line where the cursor is
