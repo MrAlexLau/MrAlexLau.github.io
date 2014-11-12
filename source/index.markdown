@@ -14,4 +14,5 @@ footer: true
 - [Javascript](/examples/javascript)
 - [Octopress](/examples/octopress)
 - [Ruby](/examples/ruby)
+- [Sublime Text](/examples/sublime)
 - [Vim](/examples/vim)
