@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | Bits on Bits on Bits]]></title>
   <link href="http://bitsonbitsonbits.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://bitsonbitsonbits.com/"/>
-  <updated>2014-10-13T16:58:20-04:00</updated>
+  <updated>2014-11-12T15:18:52-06:00</updated>
   <id>http://bitsonbitsonbits.com/</id>
   <author>
     <name><![CDATA[Alex Lau]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[My 4 Stages of Version Control]]></title>
     <link href="http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control/"/>
-    <updated>2013-11-04T00:00:00-05:00</updated>
+    <updated>2013-11-04T00:00:00-06:00</updated>
     <id>http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control</id>
     <content type="html"><![CDATA[<p>Version control &ndash; it&rsquo;s great. It&rsquo;s also amazing how you don&rsquo;t realize how much better it <em>can</em> be until you use a better tool. Personally, I like to think I&rsquo;ve gone through 4 main &ldquo;stages&rdquo; of version control, each stage being a more useful and effective addition to my workflow than the previous.</p>
 
