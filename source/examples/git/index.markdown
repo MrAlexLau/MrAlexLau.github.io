@@ -7,6 +7,12 @@ sharing: false
 footer: true
 ---
 
+### Amend a commit
+Add a change to the last commit:
+```
+git commit --amend -m 'my new commit message'
+```
+
 ### Checkout a particular version of a file
 From [this StackOverflow answer](http://stackoverflow.com/a/215731):
 ```
