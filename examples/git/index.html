@@ -10,7 +10,7 @@
 
   
   <meta name="description" content="Git Amend a commit Add a change to the last commit: 1
-git commit --amend -m 'my new commit message' Checkout a particular version of a file From &hellip;">
+git commit --amend -m 'my new commit message' Checkout a file vs a branch The syntax for &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,6 +88,22 @@ git commit --amend -m 'my new commit message' Checkout a particular version of a
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>git commit --amend -m 'my new commit message'</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Checkout a file vs a branch</h3>
+
+<p>The syntax for checking out a branch and a file are the same in git.</p>
+
+<p>Suppose you have a file named &lsquo;master&rsquo; and a branch named &lsquo;master&rsquo;. This checks out the branch:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout master #=&gt; Already on 'master'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Whereas you can use the <code>--</code> option to explicitly checkout a file:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout -- master</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>Checkout a particular version of a file</h3>
