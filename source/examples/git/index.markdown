@@ -13,6 +13,19 @@ Add a change to the last commit:
 git commit --amend -m 'my new commit message'
 ```
 
+### Checkout a file vs a branch
+The syntax for checking out a branch and a file are the same in git.
+
+Suppose you have a file named 'master' and a branch named 'master'. This checks out the branch:
+```
+git checkout master #=> Already on 'master'
+```
+
+Whereas you can use the `--` option to explicitly checkout a file:
+```
+git checkout -- master
+```
+
 ### Checkout a particular version of a file
 From [this StackOverflow answer](http://stackoverflow.com/a/215731):
 ```
