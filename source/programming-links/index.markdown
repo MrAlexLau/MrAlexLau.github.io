@@ -25,6 +25,7 @@ footer: true
 
 ## Javascript
 * [MicroJS](http://microjs.com/#) - a site for searching for javascript micro-frameworks
+* [Objects in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects) - a primer from Mozilla about how objects work in javascript
 * [45 use javascript examples](http://flippinawesome.org/2013/12/23/45-useful-javascript-tips-tricks-and-best-practices)
 
 ## Mac OS X
