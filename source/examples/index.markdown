@@ -9,6 +9,7 @@ footer: true
 
 - [Command Line](/examples/command-line)
 - [CSS](/examples/css)
+- [D3](/examples/d3)
 - [Git](/examples/git)
 - [HTML](/examples/html)
 - [Javascript](/examples/javascript)

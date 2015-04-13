@@ -18,6 +18,10 @@ footer: true
 * [CodeRanger blog](https://coderanger.net/system-monitoring/)
 * [Obtaining an SSL Certificate](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-with-a-free-signed-ssl-certificate-on-a-vps)
 
+## D3
+* [Dashing d3](https://www.dashingd3js.com)
+  * [Basic svg demos](https://www.dashingd3js.com/basic-building-blocks)
+
 ## Git
 * [Global Gitignore](https://help.github.com/articles/ignoring-files#create-a-global-gitignore) - creating a global gitignore file
 * [How Rebasing Works](http://lostechies.com/joshuaflanagan/2010/09/03/use-gitk-to-understand-git/) - great explanation of how rebasing works in Git
