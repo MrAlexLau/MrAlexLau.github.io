@@ -9,10 +9,8 @@
   <meta name="author" content="Alex Lau">
 
   
-  <meta name="description" content="Command-line PbCopy Use this command to copy terminal text to your OS&rsquo;s copy buffer. Examples: 1
-2
-echo 'cool' | pbcopy
-cat temp.txt | pbcopy &hellip;">
+  <meta name="description" content="Command-line Find What Process is Running on a Given Port For port 4848, it would be: 1
+sudo lsof -P | grep :4848 PbCopy Use this command to copy &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,7 +82,15 @@ cat temp.txt | pbcopy &hellip;">
     <h1 class="entry-title">Command-line</h1>
   </header>
   
-  <h3>PbCopy</h3>
+  <h3>Find What Process is Running on a Given Port</h3>
+
+<p>For port 4848, it would be:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo lsof -P | grep :4848</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>PbCopy</h3>
 
 <p>Use this command to copy terminal text to your OS&rsquo;s copy buffer. Examples:</p>
 
