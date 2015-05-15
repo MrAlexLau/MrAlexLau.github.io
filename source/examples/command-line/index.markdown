@@ -7,6 +7,12 @@ sharing: false
 footer: true
 ---
 
+### Find What Process is Running on a Given Port
+For port 4848, it would be:
+```
+sudo lsof -P | grep :4848
+```
+
 ### PbCopy
 Use this command to copy terminal text to your OS's copy buffer. Examples:
 ```
