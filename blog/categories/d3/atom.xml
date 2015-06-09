@@ -4,7 +4,7 @@
   <title><![CDATA[Category: d3 | Bits on Bits on Bits]]></title>
   <link href="http://bitsonbitsonbits.com/blog/categories/d3/atom.xml" rel="self"/>
   <link href="http://bitsonbitsonbits.com/"/>
-  <updated>2015-06-09T18:24:05-05:00</updated>
+  <updated>2015-06-09T18:30:48-05:00</updated>
   <id>http://bitsonbitsonbits.com/</id>
   <author>
     <name><![CDATA[Alex Lau]]></name>
@@ -22,7 +22,7 @@
 
 <h2><a href="https://github.com/mbostock/d3/wiki/Gallery">D3 Gallery</a></h2>
 
-<p>Mike Bostock is one of the developers for d3 &ndash; and is basically a visualization god. This page on the d3 wiki is a collection of charts and graphs. It&rsquo;s a great starting place to see exactly what&rsquo;s possible, and most of the examples provide source code.</p>
+<p>Mike Bostock is the creator of d3 &ndash; and is basically a visualization god. This page on the d3 wiki is a collection of charts and graphs. It&rsquo;s a great starting place to see exactly what&rsquo;s possible, and most of the examples provide source code.</p>
 
 <h2><a href="https://www.dashingd3js.com/">Dashing D3</a></h2>
 
