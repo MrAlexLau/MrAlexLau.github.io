@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: version-control | Bits on Bits on Bits]]></title>
+  <link href="http://bitsonbitsonbits.com/blog/categories/version-control/atom.xml" rel="self"/>
+  <link href="http://bitsonbitsonbits.com/"/>
+  <updated>2015-06-15T14:46:45-05:00</updated>
+  <id>http://bitsonbitsonbits.com/</id>
+  <author>
+    <name><![CDATA[Alex Lau]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My 4 Stages of Version Control]]></title>
+    <link href="http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control/"/>
+    <updated>2013-11-04T00:00:00-06:00</updated>
+    <id>http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control</id>
+    <content type="html"><![CDATA[<p>Version control &ndash; it&rsquo;s great. It&rsquo;s also amazing how you don&rsquo;t realize how much better it <em>can</em> be until you use a better tool. Personally, I like to think I&rsquo;ve gone through 4 main &ldquo;stages&rdquo; of version control, each stage being a more useful and effective addition to my workflow than the previous.</p>
+
+<h2>Stage 1 &ndash; Local Backups</h2>
+
+<p><em>&ldquo;Hmmmm, I&rsquo;m planning on making a lot of change to this code, better make a copy of the file <strong>hello.cpp</strong>. I&rsquo;ll call it <strong>hello2.cpp</strong>! I&rsquo;m a genius!&rdquo;</em></p>
+
+<p>Stage 1 is every n00b&rsquo;s favorite, just making another copy of the file. Something go horribly wrong while you were in that 4am coding frenzy? You&rsquo;ve always got that copy lying around, assuming you had the foresight to make it.</p>
+
+<h2>Stage 2 &ndash; Offsite Backups</h2>
+
+<p><em>&ldquo;Hey (insert programming partner&rsquo;s name here), we&rsquo;re going to need to share our code somehow! How about I work on it Friday night, then email you a zip file of my progress? Then you can work on it Saturday!&rdquo;</em></p>
+
+<p>Stage 2 is only slightly better than stage 1. As least you (and your partner) have a copy of the code the next time you spill some hot chocolate on your laptop.</p>
+
+<h2>Stage 3 &ndash; Centralized Version Control</h2>
+
+<p><em>&ldquo;Wow, svn is really cool! You can make savepoints in your code?! Other people can get your code too, and contribute to it?!&rdquo;</em></p>
+
+<p>Using an <strong>actual</strong> version control system for the first time is mindblowing in the omg-why-didn&rsquo;t-I-know-about-this-before kind of way. Once you realize how to commit and branch code, there&rsquo;s no turning back.</p>
+
+<h2>Stage 4 &ndash; Distributed Version Control</h2>
+
+<p><em>&ldquo;I don&rsquo;t really get what the big deal is with git. I mean it&rsquo;s pretty much the same as &ndash; oh wait, oh wait no it&rsquo;s not. Ok. Yes. This is really cool. LET FREEDOM RING.&rdquo;</em></p>
+
+<p>Just when I was telling my friends how great svn is, git came along and changed everthing. Changes are stored extremely efficiently, making the act of pulling changes quick even when there are a lot of files modified. Branches with git are &ldquo;cheap&rdquo; in that they are easily mergeable with other branches. With git, life is good. With github, life is great. I&rsquo;ll go into that more in another post.</p>
+]]></content>
+  </entry>
+  
+</feed>

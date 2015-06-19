@@ -1,0 +1,15 @@
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">run</span>
+  <span class="vi">@all_doors</span> <span class="o">=</span> <span class="n">set_up_doors</span>
+
+  <span class="n">contestants_initial_guess</span> <span class="o">=</span> <span class="n">contestants_first_guess</span>
+  <span class="n">revealed_door_number</span> <span class="o">=</span> <span class="n">reveal_door</span><span class="p">(</span><span class="n">contestants_initial_guess</span><span class="p">,</span> <span class="vi">@door_with_prize</span><span class="p">)</span>
+  <span class="n">final_guess</span> <span class="o">=</span> <span class="n">contestants_second_guess</span><span class="p">(</span><span class="n">contestants_initial_guess</span><span class="p">,</span> <span class="n">revealed_door_number</span><span class="p">)</span>
+
+  <span class="n">prize_found</span> <span class="o">=</span> <span class="vi">@all_doors</span><span class="o">[</span><span class="n">final_guess</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="ss">:value</span><span class="o">]</span> <span class="o">==</span> <span class="ss">:car</span>
+  <span class="n">contestant_switched</span> <span class="o">=</span> <span class="p">(</span><span class="n">contestants_initial_guess</span> <span class="o">!=</span> <span class="n">final_guess</span><span class="p">)</span>
+  <span class="n">switching_wouldve_helped</span> <span class="o">=</span> <span class="p">(</span><span class="vi">@door_with_prize</span> <span class="o">!=</span> <span class="n">contestants_initial_guess</span><span class="p">)</span>
+
+  <span class="n">display_game_results</span><span class="p">(</span><span class="n">final_guess</span><span class="p">,</span> <span class="vi">@door_with_prize</span><span class="p">,</span> <span class="n">prize_found</span><span class="p">,</span> <span class="n">switching_wouldve_helped</span><span class="p">)</span>
+  <span class="n">set_result</span><span class="p">(</span><span class="n">prize_found</span><span class="p">,</span> <span class="n">contestant_switched</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>

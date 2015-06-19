@@ -1,0 +1,10 @@
+<div class="highlight"><pre><span class="k">@mixin</span> <span class="nt">sexy-border</span><span class="o">(</span><span class="err">$</span><span class="nt">color</span><span class="o">,</span> <span class="err">$</span><span class="nt">width</span><span class="o">:</span> <span class="nt">1in</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">border</span><span class="o">:</span> <span class="p">{</span>
+    <span class="k">color</span><span class="o">:</span> <span class="err">$</span><span class="k">color</span><span class="p">;</span>
+    <span class="k">width</span><span class="o">:</span> <span class="err">$</span><span class="k">width</span><span class="p">;</span>
+    <span class="n">style</span><span class="o">:</span> <span class="k">dashed</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">p</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">sexy</span><span class="o">-</span><span class="k">border</span><span class="p">(</span><span class="nb">blue</span><span class="p">);</span> <span class="p">}</span>
+<span class="nt">h1</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">sexy</span><span class="o">-</span><span class="k">border</span><span class="p">(</span><span class="nb">blue</span><span class="o">,</span> <span class="m">2in</span><span class="p">);</span> <span class="p">}</span>
+</pre></div>

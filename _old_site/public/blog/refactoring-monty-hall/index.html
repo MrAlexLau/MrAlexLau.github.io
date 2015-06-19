@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Revisiting an Old Ruby Program - Bits on Bits on Bits</title>
+  <meta name="author" content="Alex Lau">
+
+  
+  <meta name="description" content="As an exercise in coding, I recently rewrote an old ruby program into a new one. Functionally the code for the new program does the exact same thing &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://bitsonbitsonbits.com/blog/refactoring-monty-hall">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Bits on Bits on Bits" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45346656-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Bits on Bits on Bits</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:bitsonbitsonbits.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/examples">Examples</a></li>
+  <li><a href="/programming-links">Links</a></li>
+  <li><a href="/blog">Blog</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Revisiting an Old Ruby Program</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-06T19:49:00-05:00" pubdate data-updated="true">Oct 6<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>As an exercise in coding, I recently rewrote an <a href="https://github.com/MrAlexLau/monty_hall/blob/original_program/montyHall.rb">old ruby program</a> into <a href="https://github.com/MrAlexLau/monty_hall">a new one</a>. Functionally the code for the new program does the exact same thing as the old one &ndash; both programs run simulations for the <a href="http://en.wikipedia.org/wiki/Monty_Hall_problem">Monty Hall Problem</a>. But the new one was written with the intention of being easier to read and DRY&#8217;er.</p>
+
+<p>The original program was from when I was first learning ruby, and was definitely painful to read at times. Going straight down the program, here&rsquo;s a self-critique of some of the code.</p>
+
+<h4>Complaint #1: lack of inline boolean expressions</h4>
+
+<p>This is <em>supposed to</em> read a command line argument, and set it to a boolean <code>true</code> if the argument is the string &ldquo;true&rdquo;:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">show_details_option</span> <span class="o">=</span> <span class="kp">false</span> <span class="k">if</span> <span class="n">show_details_option</span> <span class="o">!=</span> <span class="s2">&quot;true&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The danger in this is that <code>show_details_options</code> would not be set at all if the <code>if</code> condition isn&rsquo;t met. It doesn&rsquo;t in this case since it was already initialized on the line before, but there&rsquo;s no use in taking this risk if it&rsquo;s perfectly avoidable.</p>
+
+<p>My new version ditches the <code>if</code> statement altogether:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">show_details</span> <span class="o">=</span> <span class="no">ARGV</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="s1">&#39;true&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Complaint #2: using <code>and</code> and <code>or</code> instead of <code>&amp;&amp;</code> and <code>||</code></h4>
+
+<p><code>and</code> and <code>or</code> are meant for flow control, not to be used as boolean operators.</p>
+
+<p>What can I say? I was young, I was naive, I hadn&rsquo;t read <a href="http://devblog.avdi.org/2010/08/02/using-and-and-or-in-ruby/">this blog post by Avdi Grimm</a>.</p>
+
+<h4>Complaint #3: not using built in array methods</h4>
+
+<h5>Example 1</h5>
+
+<p>Take this snippet:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">possible_open_doors</span> <span class="o">=</span> <span class="o">[]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">.</span><span class="n">.total_number_of_doors</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">contestants_guess</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">number_of_door_with_car</span>
+</span><span class='line'>    <span class="n">possible_open_doors</span> <span class="o">&lt;&lt;</span> <span class="n">i</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The purpose of this was to build a new array from 1 to <code>total_number_of_doors</code> while excluding  specific values, namely <code>contestants_guess</code> and <code>possible_open_doors</code>.</p>
+
+<p>My approach was to build a brand new array, while checking to make sure the new values being appended to the new array were neither <code>contestants_guess</code> nor <code>number_of_door_with_car</code>. That works, but the same effect can be achieved much more concisely with some built in array functions in ruby. The refactored result is much shorter:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">revealable_doors</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.total_number_of_doors</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span> <span class="o">-</span> <span class="o">[</span><span class="n">number_of_door_with_car</span><span class="p">,</span> <span class="n">contestants_guess</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note that you can convert a range into an array in ruby (eg &ndash; <code>(1..4).to_a</code> becomes <code>[1, 2, 3, 4]</code>). The array difference operator (aka array subtraction) allows us to easily exclude particular values. If I wanted to exclude 1 and 4 from the array of 4 I can say <code>[1, 2, 3, 4] - [1, 4]</code> &ndash; which seems trivial with hardcoded values but becomes handy with variable values which need to be excluded.</p>
+
+<h5>Example 2</h5>
+
+<p>Here I&rsquo;m selecting a random value from an array:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">possible_open_doors</span><span class="o">[</span><span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.possible_open_doors</span><span class="o">.</span><span class="n">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When <a href="http://ruby-doc.org/core-2.1.3/Array.html#method-i-sample">Array&rsquo;s &ldquo;sample&rdquo; method</a> already does precisely the same thing:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">possible_open_doors</span><span class="o">.</span><span class="n">sample</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Complaint #4: methods that took way too many lines of code</h4>
+
+<p>My <a href="https://github.com/MrAlexLau/monty_hall/blob/original_program/montyHall.rb#L41-L129">original method</a> used to run a simulation was 86 lines of code long. Just <em>a few</em> more than Sandi Metz&rsquo;s <a href="http://rubyrogues.com/087-rr-book-clubpractical-object-oriented-design-in-ruby-with-sandi-metz/">five lines per method rule</a>. The body of the revised version is a little closer at 9 lines (excluding whitespace):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">run</span>
+</span><span class='line'>  <span class="vi">@all_doors</span> <span class="o">=</span> <span class="n">set_up_doors</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">contestants_initial_guess</span> <span class="o">=</span> <span class="n">contestants_first_guess</span>
+</span><span class='line'>  <span class="n">revealed_door_number</span> <span class="o">=</span> <span class="n">reveal_door</span><span class="p">(</span><span class="n">contestants_initial_guess</span><span class="p">,</span> <span class="vi">@door_with_prize</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">final_guess</span> <span class="o">=</span> <span class="n">contestants_second_guess</span><span class="p">(</span><span class="n">contestants_initial_guess</span><span class="p">,</span> <span class="n">revealed_door_number</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">prize_found</span> <span class="o">=</span> <span class="vi">@all_doors</span><span class="o">[</span><span class="n">final_guess</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="ss">:value</span><span class="o">]</span> <span class="o">==</span> <span class="ss">:car</span>
+</span><span class='line'>  <span class="n">contestant_switched</span> <span class="o">=</span> <span class="p">(</span><span class="n">contestants_initial_guess</span> <span class="o">!=</span> <span class="n">final_guess</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">switching_wouldve_helped</span> <span class="o">=</span> <span class="p">(</span><span class="vi">@door_with_prize</span> <span class="o">!=</span> <span class="n">contestants_initial_guess</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">display_game_results</span><span class="p">(</span><span class="n">final_guess</span><span class="p">,</span> <span class="vi">@door_with_prize</span><span class="p">,</span> <span class="n">prize_found</span><span class="p">,</span> <span class="n">switching_wouldve_helped</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">set_result</span><span class="p">(</span><span class="n">prize_found</span><span class="p">,</span> <span class="n">contestant_switched</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Not only is this less lines of code, but also reads a lot better&hellip; going down the line of methods being called you see &ldquo;set_up_doors&rdquo;, &ldquo;contestants_first_guess&rdquo;, &ldquo;reveal_door&rdquo;, etc. and can see exactly how the flow of the simulation works.</p>
+
+<h4>Conclusion</h4>
+
+<p>I was hesitant to even look at my original program because I knew that there would be lots of cringe-worthy moments to be had. But it&rsquo;s satisfying to be able to quickly identify elegant solutions to problems that used to give me a hassle &ndash; I&rsquo;d recommend it as an exercise to anyone.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Alex Lau</span></span>
+
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://bitsonbitsonbits.com/blog/refactoring-monty-hall/" data-via="" data-counturl="http://bitsonbitsonbits.com/blog/refactoring-monty-hall/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/autoloading-sass-in-sinatra/" title="Previous Post: Autoloading Sass in Sinatra">&laquo; Autoloading Sass in Sinatra</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/d3-training-wheels/" title="Next Post: D3 Training Wheels">D3 Training Wheels &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/d3-training-wheels/">D3 Training Wheels</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/refactoring-monty-hall/">Revisiting an Old Ruby Program</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/autoloading-sass-in-sinatra/">Autoloading Sass in Sinatra</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/launchctl-overrides/">Launchctl "Nothing Found to Load"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/rubygems-versioning/">RubyGems Versioning</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Alex Lau -
+  <span class="credit">Powered by the wonderful <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'bitsonbitsonbits';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://bitsonbitsonbits.com/blog/refactoring-monty-hall/';
+        var disqus_url = 'http://bitsonbitsonbits.com/blog/refactoring-monty-hall/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

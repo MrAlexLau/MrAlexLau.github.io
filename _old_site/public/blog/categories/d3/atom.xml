@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: d3 | Bits on Bits on Bits]]></title>
+  <link href="http://bitsonbitsonbits.com/blog/categories/d3/atom.xml" rel="self"/>
+  <link href="http://bitsonbitsonbits.com/"/>
+  <updated>2015-06-15T14:46:45-05:00</updated>
+  <id>http://bitsonbitsonbits.com/</id>
+  <author>
+    <name><![CDATA[Alex Lau]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[D3 Training Wheels]]></title>
+    <link href="http://bitsonbitsonbits.com/blog/d3-training-wheels/"/>
+    <updated>2015-06-09T16:28:00-05:00</updated>
+    <id>http://bitsonbitsonbits.com/blog/d3-training-wheels</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been working with d3 quite a bit lately. It&rsquo;s a subject I&rsquo;ve been interested in for a while, but never had a passion project to really use it with until I had a project at work that required it. Putting this post together as a reference to some resources I wish I had known about when I first started.</p>
+
+<h2><a href="https://github.com/mbostock/d3/wiki/Gallery">D3 Gallery</a></h2>
+
+<p>Mike Bostock is the creator of d3 &ndash; and is basically a visualization god. This page on the d3 wiki is a collection of charts and graphs. It&rsquo;s a great starting place to see exactly what&rsquo;s possible, and most of the examples provide source code.</p>
+
+<h2><a href="https://www.dashingd3js.com/">Dashing D3</a></h2>
+
+<p>This tutorial took me from zero to sixty with d3. It does an amazing job at organizing sections into consumable portions. Not only is it the best walkthrough of d3 I&rsquo;ve come across to date, it&rsquo;s also one of the best tutorials I&rsquo;ve ever read, period.</p>
+
+<h2><a href="http://bl.ocks.org/">Bl.ocks.org</a></h2>
+
+<p>Another creation from Mike Bostock. I discovered this site by seeing it frequently referenced on StackOverflow. What you do is create a <a href="https://gist.github.com/">github gist</a>, apply the same path to bl.ocks.org, and the bl.ocks website will automagically display your visualization.</p>
+
+<p>For example, Mike has created a gist at <a href="https://gist.github.com/mbostock/1353700.">https://gist.github.com/mbostock/1353700.</a> Since this gist has a file named <code>index.html</code>, bl.ocks is smart enough to display a preview of the visualization at <a href="http://bl.ocks.org/mbostock/1353700.">http://bl.ocks.org/mbostock/1353700.</a> (Note that <code>/mbostock/1353700/</code> is the same in both urls.)</p>
+
+<p>I prefer this to jsfiddle/codepen when dealing with d3 examples since it&rsquo;s easier to read longer bits of code in the longform that bl.ocks displays them in. And because each example is a github gist under the covers, forking and modifying examples in my local dev environment is trivial.</p>
+]]></content>
+  </entry>
+  
+</feed>

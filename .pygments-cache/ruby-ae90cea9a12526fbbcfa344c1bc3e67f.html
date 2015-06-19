@@ -1,0 +1,4 @@
+<div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="sx">%w{ a b c d e f }</span>
+<span class="n">a</span><span class="o">.</span><span class="n">keep_if</span> <span class="p">{</span><span class="o">|</span><span class="n">v</span><span class="o">|</span> <span class="n">v</span> <span class="o">=~</span> <span class="sr">/[aeiou]/</span><span class="p">}</span>
+<span class="n">a</span> <span class="c1">#=&gt; [&quot;a&quot;, &quot;e&quot;]</span>
+</pre></div>

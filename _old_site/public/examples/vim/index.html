@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>vim - Bits on Bits on Bits</title>
+  <meta name="author" content="Alex Lau">
+
+  
+  <meta name="description" content="Vim Centering the Current Line zz &ndash; vertically centers the current line on the screen Change Command: c Examples: ce &ndash; delete the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://bitsonbitsonbits.com/examples/vim">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Bits on Bits on Bits" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45346656-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Bits on Bits on Bits</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:bitsonbitsonbits.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/examples">Examples</a></li>
+  <li><a href="/programming-links">Links</a></li>
+  <li><a href="/blog">Blog</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Vim</h1>
+  </header>
+  
+  <h3>Centering the Current Line</h3>
+
+<p><code>zz</code> &ndash; vertically centers the current line on the screen</p>
+
+<h3>Change</h3>
+
+<p>Command: <code>c</code></p>
+
+<h4>Examples:</h4>
+
+<p><code>ce</code> &ndash; delete the current word and enter insertion mode
+<code>c$</code> &ndash; delete until the end of the line and enter insertion mode</p>
+
+<p>Advanced example: From within a single quote, eg &ndash; <em>&lsquo;in the middle of this&rsquo;</em></p>
+
+<p><code>ci'</code></p>
+
+<p>Which stands for Change, Inside, Single Quote</p>
+
+<h3>Delete Shortcuts</h3>
+
+<p>From vimtutor:</p>
+
+<p><code>daw</code> &ndash; &ldquo;delete at word&rdquo; &ndash; deletes the current word regardless of the cursor position</p>
+
+<p><code>dw</code> &ndash; delete until the start of the next word</p>
+
+<p><code>de</code> &ndash; delete until the end of the current word</p>
+
+<p><code>d$</code> &ndash; delete until the end of the current line</p>
+
+<h3>File Status</h3>
+
+<p><code>Ctrl + g</code> &ndash; See the current file and cursor position</p>
+
+<h3>Find and Replace</h3>
+
+<p>Find and replace on all instances on the current line:
+<code>
+:s/foo/bar/g
+</code></p>
+
+<h3>Find and Replace</h3>
+
+<p>Find and replace globally in a file:</p>
+
+<p><code>
+:%s/foo/bar/g
+</code></p>
+
+<p>Find and replace between lines 8 and 10:</p>
+
+<p><code>
+:8,10 s/foo/bar/g
+</code></p>
+
+<p>Add c to the end of the command to be prompted for a confirmation at each find/replace:</p>
+
+<p><code>
+:8,10 s/foo/bar/gc
+</code></p>
+
+<h3>Highlight Matching Parentheses</h3>
+
+<p>While the cursor is ), ], }, press <code>%</code></p>
+
+<h3>Jump to the Beginning/End of the File</h3>
+
+<p>Jump to the beginning of the file: <code>gg</code></p>
+
+<p>Jump to the beginning of the file: <code>G</code></p>
+
+<h3>Jump to the Beginning of the Line</h3>
+
+<p>Command: <code>0</code></p>
+
+<h3>Registers</h3>
+
+<p>Use registers to store multiple values that you can copy and paste. From <a href="http://stackoverflow.com/a/1498026/2339716">this excellent stackoverflow answer</a>:</p>
+
+<blockquote><p>Registers in Vim let you run actions or commands on text stored within them. To access a register, you type &ldquo;a before a command, where a is the name of a register. If you want to copy the current line into register k, you can type</p></blockquote>
+
+<p><code>
+"kyy
+</code></p>
+
+<blockquote><p>Or you can append to a register by using a capital letter</p></blockquote>
+
+<p><code>
+"Kyy
+</code></p>
+
+<blockquote><p>You can then move through the document and paste it elsewhere using</p></blockquote>
+
+<p><code>
+"kp
+</code></p>
+
+<blockquote><p>To access all currently defined registers type</p></blockquote>
+
+<p><code>
+:reg
+</code></p>
+
+<h3>The Open Command</h3>
+
+<p>Command: <code>O</code> &ndash; insert a new line above the current line where the cursor is</p>
+
+<p>Command: <code>o</code> &ndash; insert a new line below the current line where the cursor is</p>
+
+<h3>The Overwrite Command</h3>
+
+<p>Command: <code>R</code> &ndash; enter overwrite mode</p>
+
+<h3>Repeat the Last Command</h3>
+
+<p>Command: <code>.</code></p>
+
+<h3>Running External Commands</h3>
+
+<p>Command: <code>!&lt;external command&gt;</code></p>
+
+<p>Example: <code>!ls</code> &ndash; executes the file list command in the current directory</p>
+
+<h3>Searching</h3>
+
+<p>Search: <code>/</code></p>
+
+<p>Search for Previous Match: <code>?</code></p>
+
+<p>Find next match: <code>n</code></p>
+
+<p>Find next match, searching backwards: <code>N</code></p>
+
+<h3>Select the Entire Line</h3>
+
+<p>Command: <code>V</code> (note that it&rsquo;s capitalized)</p>
+
+<h3>Til (aka Until)</h3>
+
+<h4>Exclusive Til</h4>
+
+<p>Command: <code>t</code></p>
+
+<p>Advanced example: From the current position, visually select until the comma</p>
+
+<p><code>v</code> + <code>t</code> +<code>,</code></p>
+
+<p>This selection <em>excludes</em> the comma itself.</p>
+
+<h3>Til (aka Until)</h3>
+
+<h4>Inclusive Til</h4>
+
+<p>Command: <code>f</code></p>
+
+<p>Advanced example: From the current position, visually select until the comma</p>
+
+<p><code>v</code> + <code>f</code> +<code>,</code></p>
+
+<p>This selection <em>includes</em> the comma itself.</p>
+
+<h3>Visual Selection</h3>
+
+<p>Command: <code>v</code></p>
+
+<p>Advanced example: From within a single quote, eg &ndash; <em>&lsquo;in the middle of this&rsquo;</em></p>
+
+<p><code>v</code> + <code>i</code> +<code>'</code></p>
+
+<p>Which stands for Visually Select, Inside, Single Quote</p>
+
+<h3>Write and Quit</h3>
+
+<p>Command: <code>x</code></p>
+
+<p>Shorthand for write and quit together (normally <code>wq</code>)</p>
+
+<h3>Vimrc settings file</h3>
+
+<p><code>" comments lead off with a double quote</code></p>
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+      </p>
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/d3-training-wheels/">D3 Training Wheels</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/refactoring-monty-hall/">Revisiting an Old Ruby Program</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/autoloading-sass-in-sinatra/">Autoloading Sass in Sinatra</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/launchctl-overrides/">Launchctl "Nothing Found to Load"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/rubygems-versioning/">RubyGems Versioning</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Alex Lau -
+  <span class="credit">Powered by the wonderful <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

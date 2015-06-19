@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: homebrew | Bits on Bits on Bits]]></title>
+  <link href="http://bitsonbitsonbits.com/blog/categories/homebrew/atom.xml" rel="self"/>
+  <link href="http://bitsonbitsonbits.com/"/>
+  <updated>2015-06-15T14:46:45-05:00</updated>
+  <id>http://bitsonbitsonbits.com/</id>
+  <author>
+    <name><![CDATA[Alex Lau]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Autostarting Homebrew Packages]]></title>
+    <link href="http://bitsonbitsonbits.com/blog/autostarting-homebrew-packages/"/>
+    <updated>2013-10-27T19:48:00-05:00</updated>
+    <id>http://bitsonbitsonbits.com/blog/autostarting-homebrew-packages</id>
+    <content type="html"><![CDATA[<p><a href="http://brew.sh">Homebrew</a> has made my life a lot easier when setting up new mac development environments. To install a new package is as easy as typing <code>brew install mysql</code> on the command line. (Other programs I commonly install with Homebrew are git, mongodb, and postgresql.)</p>
+
+<p>Sometimes you want a program to start a daemon (background) process when you log in. For example, I can start mongodb&rsquo;s daemon with the <code>mongod</code> command, but it&rsquo;d be nicer if it just started automatically.</p>
+
+<p>Fortunately Homebrew has a way to do this! Simply type <code>brew info mongo</code>. If mongod isn&rsquo;t set up to run automatically, the last bit of output will look like this:</p>
+
+<pre><code>To have launchd start mongodb at login:
+    ln -sfv /usr/local/opt/mongodb/*.plist ~/Library/LaunchAgents
+Then to load mongodb now:
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
+Or, if you don't want/need launchctl, you can just run:
+    mongod
+</code></pre>
+
+<p>Note how you not only see how to start mongodb upon login, but also it shows you the name of mongo&rsquo;s daemon process, mongod.</p>
+]]></content>
+  </entry>
+  
+</feed>

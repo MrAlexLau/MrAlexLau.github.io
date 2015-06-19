@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>css / sass - Bits on Bits on Bits</title>
+  <meta name="author" content="Alex Lau">
+
+  
+  <meta name="description" content="Css / Sass All Except Last Child Selector 1
+2
+3
+:not(:last-child) { /* styles */
+} Centering See http://css-tricks.com/centering-css-complete-guide &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://bitsonbitsonbits.com/examples/css">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Bits on Bits on Bits" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45346656-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Bits on Bits on Bits</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:bitsonbitsonbits.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/examples">Examples</a></li>
+  <li><a href="/programming-links">Links</a></li>
+  <li><a href="/blog">Blog</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Css / Sass</h1>
+  </header>
+  
+  <h3>All Except Last Child Selector</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nd">:not</span><span class="o">(</span><span class="nd">:last-child</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c">/* styles */</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Centering</h3>
+
+<p>See <a href="http://css-tricks.com/centering-css-complete-guide">http://css-tricks.com/centering-css-complete-guide</a></p>
+
+<h3>Extend in Sass</h3>
+
+<p>Given the example from the <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend">sass documentation</a>, given this sass:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.error</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="m">#f00</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="m">#fdd</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.seriousError</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">@</span><span class="n">extend</span> <span class="o">.</span><span class="n">error</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>its compiled css is:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.error</span><span class="o">,</span> <span class="nc">.seriousError</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="m">#f00</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="m">#fdd</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nc">.seriousError</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note that the styles are comma separated, decreasing the amount of duplicate code (rather than re-rendering each style inside the <code>.seriousError</code> selector). <a href="http://css-tricks.com/the-extend-concept/">This can lead to some unintended behavior</a>:
+ &ndash; If you extend another selector, selectors nested under the original are also extended
+ &ndash; You cannot extend a selector which is nested, eg &ndash; <code>@extend div span</code> will not work</p>
+
+<p>As a rule of thumb, you can use <code>@extend</code> instead of including a <code>@include a_mixin</code> when there are no arguments to be passed. Use caution when the selector you&rsquo;re extending from has nested selectors though.</p>
+
+<h3>Color Functions in Sass</h3>
+
+<p><a href="http://sass-lang.com/documentation/Sass/Script/Functions.html">This link</a> has a list of all of them. Notably:</p>
+
+<p><strong>lighten($color, $amount)</strong> &ndash; Makes a color lighter</p>
+
+<p><strong>darken($color, $amount)</strong> &ndash; Makes a color darker</p>
+
+<p><strong>grayscale($color)</strong> &ndash; Converts a color to grayscale</p>
+
+<p><strong>complement($color)</strong> &ndash; Returns the complement of a color</p>
+
+<p><strong> invert($color)</strong> &ndash;  Returns the inverse of a color</p>
+
+<h3>Each loops in Sass</h3>
+
+<p>From the <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend">sass documentation</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@each</span> <span class="err">$</span><span class="nt">animal</span> <span class="nt">in</span> <span class="nt">puma</span><span class="o">,</span> <span class="nt">sea-slug</span><span class="o">,</span> <span class="nt">egret</span><span class="o">,</span> <span class="nt">salamander</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">.</span><span class="err">#</span><span class="p">{</span><span class="err">$</span><span class="n">animal</span><span class="p">}</span><span class="nt">-icon</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(&#39;/images/#{$animal}.png&#39;)</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>For loops in Sass</h3>
+
+<p>From the <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend">sass documentation</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@for</span> <span class="err">$</span><span class="nt">i</span> <span class="nt">from</span> <span class="nt">1</span> <span class="nt">through</span> <span class="nt">3</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nc">.item-</span><span class="err">#</span><span class="p">{</span><span class="err">$</span><span class="n">i</span><span class="p">}</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">2em</span> <span class="o">*</span> <span class="err">$</span><span class="n">i</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Mixins in Sass</h3>
+
+<p>The <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend">sass documentation</a> has a good example that demonstrates mixins:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@mixin</span> <span class="nt">sexy-border</span><span class="o">(</span><span class="err">$</span><span class="nt">color</span><span class="o">,</span> <span class="err">$</span><span class="nt">width</span><span class="o">:</span> <span class="nt">1in</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">border</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">color</span><span class="o">:</span> <span class="err">$</span><span class="k">color</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">width</span><span class="o">:</span> <span class="err">$</span><span class="k">width</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">style</span><span class="o">:</span> <span class="k">dashed</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nt">p</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">sexy</span><span class="o">-</span><span class="k">border</span><span class="p">(</span><span class="nb">blue</span><span class="p">);</span> <span class="p">}</span>
+</span><span class='line'><span class="nt">h1</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">sexy</span><span class="o">-</span><span class="k">border</span><span class="p">(</span><span class="nb">blue</span><span class="o">,</span> <span class="m">2in</span><span class="p">);</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>is compiled to:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">p</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border-color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">1in</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border-style</span><span class="o">:</span> <span class="k">dashed</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">h1</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border-color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">2in</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border-style</span><span class="o">:</span> <span class="k">dashed</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Mixins also support keyword arguments, so you can explicitly name the parameters in the <code>@include</code> statement and include them out of order. Here&rsquo;s an example that works with the <code>sexy-border</code> mixin above:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">h1</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="n">sexy</span><span class="o">-</span><span class="k">border</span><span class="p">(</span><span class="err">$</span><span class="k">width</span><span class="o">:</span> <span class="m">1in</span><span class="o">,</span> <span class="err">$</span><span class="k">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">);</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Placeholder Selectors in Sass</h3>
+
+<p>Placeholder selectors can only be used with the <code>@extend</code> directive. If they&rsquo;re not referenced at all, they render no output in the compiled css.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">%</span><span class="nt">error</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="m">#f00</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="m">#fdd</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">%</span><span class="nt">not-used</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">//</span> <span class="n">these</span> <span class="n">styles</span> <span class="n">aren</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">rendered</span> <span class="n">anywhere</span>
+</span><span class='line'>  <span class="o">//</span> <span class="n">since</span> <span class="o">%</span><span class="n">not</span><span class="o">-</span><span class="n">used</span> <span class="n">is</span> <span class="n">not</span> <span class="n">extended</span> <span class="n">anywhere</span> <span class="n">in</span> <span class="n">this</span> <span class="n">file</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.seriousError</span> <span class="p">{</span>
+</span><span class='line'>  <span class="o">@</span><span class="n">extend</span> <span class="o">%</span><span class="n">error</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>is compiled to:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.seriousError</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="m">#f00</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="m">#fdd</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="nc">.seriousError</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border-width</span><span class="o">:</span> <span class="m">3px</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>While loop in Sass</h3>
+
+<p>From the <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend">sass documentation</a>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="err">$</span><span class="nt">i</span><span class="o">:</span> <span class="nt">6</span><span class="o">;</span>
+</span><span class='line'><span class="k">@while</span> <span class="err">$</span><span class="nt">i</span> <span class="o">&gt;</span> <span class="nt">0</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nc">.item-</span><span class="err">#</span><span class="p">{</span><span class="err">$</span><span class="n">i</span><span class="p">}</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">2em</span> <span class="o">*</span> <span class="err">$</span><span class="n">i</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="err">$</span><span class="nt">i</span><span class="o">:</span> <span class="err">$</span><span class="nt">i</span> <span class="nt">-</span> <span class="nt">2</span><span class="o">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Watching a Sass File</h3>
+
+<p>Automatically recompiles scss into css:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sass --watch style.scss:style.css
+</span></code></pre></td></tr></table></div></figure>
+
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+      </p>
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/d3-training-wheels/">D3 Training Wheels</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/refactoring-monty-hall/">Revisiting an Old Ruby Program</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/autoloading-sass-in-sinatra/">Autoloading Sass in Sinatra</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/launchctl-overrides/">Launchctl "Nothing Found to Load"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/rubygems-versioning/">RubyGems Versioning</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Alex Lau -
+  <span class="credit">Powered by the wonderful <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
