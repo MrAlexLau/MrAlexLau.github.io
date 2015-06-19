@@ -20,8 +20,9 @@ footer: true
 
 ## D3
 * [Dashing d3](https://www.dashingd3js.com)
-  * [Basic svg demos](https://www.dashingd3js.com/basic-building-blocks)
+* [Basic svg demos](https://www.dashingd3js.com/basic-building-blocks)
 * [Thinking in Joins](http://bost.ocks.org/mike/join/) - great article explaining how joins work in d3
+* [D3 Easing Checker](http://bl.ocks.org/hunzy/9929724) - a bl.ocks.org website that demonstrates different easing functions for animations
 
 ## Git
 * [Global Gitignore](https://help.github.com/articles/ignoring-files#create-a-global-gitignore) - creating a global gitignore file
