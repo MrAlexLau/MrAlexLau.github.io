@@ -4,7 +4,7 @@
   <title><![CDATA[Bits on Bits on Bits]]></title>
   <link href="http://bitsonbitsonbits.com/atom.xml" rel="self"/>
   <link href="http://bitsonbitsonbits.com/"/>
-  <updated>2015-06-09T18:31:57-05:00</updated>
+  <updated>2015-06-19T15:38:31-05:00</updated>
   <id>http://bitsonbitsonbits.com/</id>
   <author>
     <name><![CDATA[Alex Lau]]></name>
@@ -12,6 +12,150 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[D3 Lessons Learned: Hover Lock Button]]></title>
+    <link href="http://bitsonbitsonbits.com/blog/d3-tutorial-hover-lock-button/"/>
+    <updated>2015-06-19T13:23:00-05:00</updated>
+    <id>http://bitsonbitsonbits.com/blog/d3-tutorial-hover-lock-button</id>
+    <content type="html"><![CDATA[<p>As an exercise in sharpening my d3 skills, I set out to create a button that mimics the <a href="http://kudosplease.com/">kudos widget</a> seen on various blogs.</p>
+
+<p>The idea is to only take action once a user has hovered over the icon for a certain period of time. It&rsquo;s a nice, animated alternative to simply clicking a &lsquo;Like&rsquo; button. Here&rsquo;s how my version turned out:</p>
+
+<iframe style="width: 200px; height: 150px" src="http://bl.ocks.org/MrAlexLau/raw/1189ed49f998421f29af/"></iframe>
+
+
+<p>You can see the full source code and example <a href="http://bl.ocks.org/MrAlexLau/1189ed49f998421f29af">here</a>.</p>
+
+<p>Though this example may seem trivial, there are a couple of important principles it demonstrates:</p>
+
+<h3>Svg Element Ordering</h3>
+
+<p>The z-index css property is ineffective for svg&rsquo;s. Instead, layers are rendered in the order they are drawn &ndash; elements drawn first appear <em>behind</em> elements drawn afterward.</p>
+
+<p>So for my example, drawing the circles goes as follows:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>  <span class="nx">outerCircle</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;circle&#39;</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;locked-on-circle&#39;</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">outerRadius</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;cx&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">outerRadius</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">outerRadius</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">defaultColor</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">whitespaceCircle</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;circle&#39;</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;locked-on-circle&#39;</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">outerRadius</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;cx&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">outerRadius</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">outerRadius</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span>
+</span><span class='line'>      <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="s1">&#39;#FFFFFF&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">loadingCircle</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;circle&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">startingRadius</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;cy&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">outerRadius</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;cx&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">outerRadius</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">defaultColor</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note that the outer ring is actually 2 circles: a larger one drawn first with a background color, and a slightly smaller white one drawn inside.</p>
+
+<h3>Animation Easing</h3>
+
+<p>You might have noticed that when you hover over the circles, the middle circle grows a little bit smaller before it gets bigger. The rate and size of this animation is controlled by its <a href="https://github.com/mbostock/d3/wiki/Transitions#ease">easing function</a>.</p>
+
+<p>In this example in particular, I&rsquo;m using <code>ease('back')</code>. You can use different easing functions to make animations occur at different rates over time. For an excellent interactive demo of easing functions, check out this <a href="http://bl.ocks.org/hunzy/9929724">bl.ock</a>.</p>
+
+<h3>Cancelling D3 Animations</h3>
+
+<p>If you begin hovering over the circle, but pull the cursor away from it the icon transitions back to its original size and color. Before working on this demo I wasn&rsquo;t sure if I would have to call something like <code>transition().cancel()</code>, but it turns out that you can simply start a new animation to cancel an existing one.</p>
+
+<p>So in my example, I&rsquo;m using this animation to grow the middle circle when a user hovers over it:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">loadingCircle</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">transition</span><span class="p">()</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">lockedColor</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">outerRadius</span> <span class="o">-</span> <span class="mi">10</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">ease</span><span class="p">(</span><span class="s1">&#39;back&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And to cancel my animation on the mouseleave event, I simply transition back to the original size and color:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>  <span class="nx">loadingCircle</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">transition</span><span class="p">()</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">defaultColor</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Animation Callbacks</h3>
+
+<p>The last trick I picked up was that animations have a callback which is triggered after they complete. Look at the <code>end</code> event here:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>  <span class="nx">loadingCircle</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">transition</span><span class="p">()</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">lockedColor</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">outerRadius</span> <span class="o">-</span> <span class="mi">10</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">ease</span><span class="p">(</span><span class="s1">&#39;back&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">duration</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">isLocked</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nx">outerCircle</span>
+</span><span class='line'>        <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s1">&#39;fill&#39;</span><span class="p">,</span> <span class="nx">options</span><span class="p">.</span><span class="nx">lockedColor</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.notification&#39;</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <code>end</code> event&rsquo;s callback only gets executed if the animation completes. This plays out nicely in our example since we only want to display a &ldquo;done&rdquo; label if the user hovers for a certain amount of time.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[D3 Training Wheels]]></title>

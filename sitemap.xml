@@ -2,98 +2,102 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://bitsonbitsonbits.com/blog/autostarting-homebrew-packages/</loc>
-        <lastmod>2014-05-29T22:20:55-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/blog/my-4-stages-of-version-control/</loc>
-        <lastmod>2014-05-29T22:20:55-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/blog/gmail-snooze/</loc>
-        <lastmod>2014-05-29T22:20:55-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/blog/rubygems-versioning/</loc>
-        <lastmod>2014-05-29T22:20:55-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/blog/launchctl-overrides/</loc>
-        <lastmod>2014-09-09T23:02:15-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/blog/autoloading-sass-in-sinatra/</loc>
-        <lastmod>2014-10-02T22:44:02-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/blog/refactoring-monty-hall/</loc>
-        <lastmod>2014-10-06T21:55:58-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/blog/d3-training-wheels/</loc>
-        <lastmod>2015-06-09T18:29:37-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://bitsonbitsonbits.com/blog/d3-tutorial-hover-lock-button/</loc>
+        <lastmod>2015-06-19T15:38:30-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/blog/archives/</loc>
-        <lastmod>2015-06-09T18:29:37-05:00</lastmod>
+        <lastmod>2015-06-19T15:38:30-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/blog/</loc>
-        <lastmod>2015-06-09T18:29:37-05:00</lastmod>
+        <lastmod>2015-06-19T15:38:30-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/examples/command-line/</loc>
-        <lastmod>2015-05-15T10:54:50-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/examples/css/</loc>
-        <lastmod>2014-09-09T22:06:44-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/examples/d3/</loc>
-        <lastmod>2015-04-13T09:51:30-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/examples/git/</loc>
-        <lastmod>2014-12-04T15:25:43-06:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/examples/html/</loc>
-        <lastmod>2014-06-15T17:34:13-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/examples/</loc>
-        <lastmod>2015-04-13T09:48:55-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/examples/javascript/</loc>
-        <lastmod>2014-09-09T21:48:57-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/examples/octopress/</loc>
-        <lastmod>2014-05-29T22:20:08-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/examples/ruby/</loc>
-        <lastmod>2014-10-13T15:58:20-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/examples/sublime/</loc>
-        <lastmod>2014-11-12T15:18:50-06:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/examples/vim/</loc>
-        <lastmod>2014-10-09T10:14:08-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/</loc>
-        <lastmod>2015-04-13T09:52:26-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/programming-links/</loc>
-        <lastmod>2015-04-13T10:31:33-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
     <url>
         <loc>http://bitsonbitsonbits.com/robots.txt</loc>
-        <lastmod>2014-03-18T20:14:43-05:00</lastmod>
+        <lastmod>2015-06-19T13:10:14-05:00</lastmod>
     </url>
 </urlset>
