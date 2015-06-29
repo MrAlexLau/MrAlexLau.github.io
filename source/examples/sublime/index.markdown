@@ -14,7 +14,7 @@ footer: true
 Go to Project > Edit Project, then add this to settings file (should be at the same level as the "folder" settings block):
 ```
   "settings": {
-    "color_scheme": "Packages/Colorr Scheme - Default/Blackboard.tmTheme"
+    "color_scheme": "Packages/Color Scheme - Default/Blackboard.tmTheme"
   }
 ```
 
