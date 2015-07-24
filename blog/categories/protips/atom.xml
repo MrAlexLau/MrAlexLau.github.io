@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: protips | Bits on Bits on Bits]]></title>
+  <link href="http://bitsonbitsonbits.com/blog/categories/protips/atom.xml" rel="self"/>
+  <link href="http://bitsonbitsonbits.com/"/>
+  <updated>2015-07-24T16:17:41-05:00</updated>
+  <id>http://bitsonbitsonbits.com/</id>
+  <author>
+    <name><![CDATA[Alex Lau]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Using Multiple Chrome Profiles]]></title>
+    <link href="http://bitsonbitsonbits.com/blog/using-multiple-chrome-profiles/"/>
+    <updated>2015-07-24T15:50:00-05:00</updated>
+    <id>http://bitsonbitsonbits.com/blog/using-multiple-chrome-profiles</id>
+    <content type="html"><![CDATA[<p>One of the most beneficial changes I&rsquo;ve made to my workflow in the past couple years is to use <a href="http://www.howtogeek.com/207614/everything-you-need-to-know-about-google-chromes-profile-switcher/">multiple profiles</a> in chrome. Basically what this does is allow you to run chrome for multiple users at the same time.</p>
+
+<p>You may be thinking, &ldquo;Ok, that&rsquo;s kind of nice &ndash; but I can already <a href="https://support.google.com/accounts/answer/1721977?hl=en">sign in to different gmail accounts</a> within the same browser window. So what does this really buy me?&rdquo; The <em>real</em> advantage to maintaining these profiles is that each profile gives you a <strong>separate</strong>, <strong>isolated</strong> chrome environment. That means that all of your bookmarks, history, chrome extensions, saved usernames, etc. all stay within the context of one profile.</p>
+
+<p>As a developer, this is a godsend. I can have one profile linked to my personal email, and one linked to my work email. The work one has an uncluttered list of bookmarks that only pertain to work, remembers my test account usernames, only uses extensions that are relevant to work, and doesn&rsquo;t auto-typeahead to sites like &lsquo;Pandora&rsquo; when I am keying in a url.</p>
+
+<p>Really what you&rsquo;re doing by setting up multiple profiles is separating your concerns for how your browser experience is organized. By just having one chrome profile, it&rsquo;s easy for browser data to get out of hand &ndash; especially with regard to having too many bookmarks and extensions. Adopting multiple profiles allows you to keep what&rsquo;s most relevant at hand, without having to open different browsers at the same time.</p>
+]]></content>
+  </entry>
+  
+</feed>
