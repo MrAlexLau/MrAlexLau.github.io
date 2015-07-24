@@ -16,4 +16,5 @@ footer: true
 - [Octopress](/examples/octopress)
 - [Ruby](/examples/ruby)
 - [Sublime Text](/examples/sublime)
+- [Salesforce Lightning](/examples/salesforce-lightning)
 - [Vim](/examples/vim)
